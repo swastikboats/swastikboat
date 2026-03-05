@@ -1,9 +1,35 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Header({ variant = "transparent" }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isDark = variant === "dark";
+
   return (
-    <header className={variant === "dark" ? "header headerDark" : "header"}>
-      <Link href="/" className="logo">Sagar Boats</Link>
+    <header
+      className={`header ${isDark ? "headerDark" : ""} ${
+        isScrolled && !isDark ? "headerScrolled" : ""
+      }`}
+    >
+      <Link href="/" className="logo">
+        Sagar Boats
+      </Link>
 
       <nav className="nav">
         <Link href="/">Home</Link>
@@ -13,9 +39,15 @@ export default function Header({ variant = "transparent" }) {
       </nav>
 
       <div className="socials">
-        <a href="#" title="Instagram">IG</a>
-        <a href="#" title="Facebook">FB</a>
-        <a href="#" title="Twitter">TW</a>
+        <a href="#" title="Instagram">
+          IG
+        </a>
+        <a href="#" title="Facebook">
+          FB
+        </a>
+        <a href="#" title="Twitter">
+          TW
+        </a>
       </div>
     </header>
   );

@@ -20,6 +20,7 @@
   --color-deep: #122B36;
   --color-water: #6FA9B8;
   --color-light: #F3F6F8;
+  --header-height: 88px;
 }
 
 @theme inline {
@@ -67,19 +68,31 @@ a {
    ==================================================== */
 
 .header {
-  position: absolute;
+  /* fixed header that overlays the hero */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: var(--header-height);
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 60px;
-  z-index: 100;
+  padding: 20px 48px;
+  z-index: 9999;
+  transition: all 0.25s ease;
+  background: rgba(11, 29, 38, 0);
+  backdrop-filter: blur(0px);
+}
+
+.header.headerScrolled {
+  background: rgba(11, 29, 38, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .headerDark {
-  position: relative !important;
+  position: fixed !important;
+  height: var(--header-height);
   background: var(--color-ocean) !important;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -255,6 +268,16 @@ a {
   background: var(--color-accent);
   width: 28px;
   border-radius: 5px;
+}
+
+/* Ensure page content sits below fixed header by default */
+.siteContent {
+  padding-top: var(--header-height);
+}
+
+/* Pull the homepage hero up underneath the fixed header so it overlays */
+.hero {
+  margin-top: calc(var(--header-height) * -1);
 }
 
 /* ====================================================
@@ -1279,13 +1302,18 @@ a {
 
 /* ── Header ─────────────────────────────────── */
 .header {
-  position: absolute;
+  /* keep header fixed across pages (duplicate section) */
+  position: fixed;
   top: 0; left: 0; width: 100%;
-  display: flex;
+  height: var(--header-height);
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 60px;
-  z-index: 100;
+  padding: 20px 48px;
+  z-index: 9999;
+  transition: all 0.25s ease;
+  background: rgba(11, 29, 38, 0);
+  backdrop-filter: blur(0px);
 }
 
 .logo {
@@ -1675,7 +1703,9 @@ a {
 
 /* ── Dark Header (inner pages) ───────────────── */
 .headerDark {
-  position: relative;
+  position: fixed !important;
+  top: 0; left: 0; width: 100%;
+  height: var(--header-height);
   background: var(--color-ocean);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }

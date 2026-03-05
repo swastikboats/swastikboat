@@ -1,5 +1,6 @@
 import "./globals.css";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import Header from "@/components/Header";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,7 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <body>
-        {children}
+        <Header />
+        <main className="siteContent">{children}</main>
       </body>
     </html>
   );
