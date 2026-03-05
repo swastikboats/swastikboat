@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 
 export const metadata = {
-  title: "Gallery — Sagar Boats",
+  title: "Gallery — Swastik Boats",
   description: "View our collection of precision-crafted rowing boats",
 };
 
@@ -87,7 +87,7 @@ export default function GalleryPage() {
         <a href="/contact" className="cta">Contact Us</a>
       </section>
 
-      <footer className="footer">© 2026 Sagar Boats. All rights reserved.</footer>
+      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
     </>
   );
 }

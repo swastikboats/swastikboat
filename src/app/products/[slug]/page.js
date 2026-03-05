@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
   return {
-    title: `${product.title} — Sagar Boats`,
+    title: `${product.title} — Swastik Boats`,
     description: product.subtitle,
   };
 }
@@ -52,8 +52,7 @@ export default async function ProductDetail({ params }) {
             <p className="detailDesc">{product.description}</p>
 
             <div className="detailCta">
-              <button className="cta">Request Quote</button>
-              <button className="cta-outline">Contact Us</button>
+              <Link href="/contact" className="cta">Request Quote</Link>
             </div>
           </div>
         </div>
@@ -108,13 +107,13 @@ export default async function ProductDetail({ params }) {
       </section>
 
       {/* ── CTA Banner ────────────────────── */}
-      <section className="ctaBanner">
+      <section className="ctaBanner\">
         <h2>Ready to Get on the Water?</h2>
         <p>Contact us to discuss your custom boat requirements.</p>
-        <button className="cta">Get in Touch</button>
+        <Link href="/contact" className="cta">Get in Touch</Link>
       </section>
 
-      <footer className="footer">© 2026 Sagar Boats. All rights reserved.</footer>
+      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
     </>
   );
 }

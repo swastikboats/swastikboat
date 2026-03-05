@@ -1,6 +1,99 @@
 @import "tailwindcss";
 
 /* ====================================================
+   LOADING SCREEN
+   ==================================================== */
+
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0B1D26 0%, #122B36 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.loadingContent {
+  text-align: center;
+  color: white;
+}
+
+.loadingLogo {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.loadingContent h1 {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+}
+
+.loadingContent p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.loadingBar {
+  width: 300px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.loadingFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #0284c7);
+  border-radius: 10px;
+  animation: fillBar 1.5s ease-in-out infinite;
+}
+
+@keyframes fillBar {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ====================================================
    TOKENS
    ==================================================== */
 
@@ -976,6 +1069,20 @@ a {
   color: var(--color-text-muted);
 }
 
+.contactLink {
+  font-size: 15px;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contactLink:hover {
+  color: #0284c7;
+  transform: translateY(-2px);
+}
+
 /* ====================================================
    CONTACT FORM
    ==================================================== */
@@ -1121,6 +1228,124 @@ a {
 }
 
 /* ====================================================
+   ABOUT SECTION (homepage)
+   ==================================================== */
+
+.aboutSection {
+  padding: 120px 24px !important;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-light) 100%) !important;
+}
+
+.aboutContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: center;
+}
+
+.aboutImage {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.4s ease;
+}
+
+.aboutImage:hover {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.aboutImage img {
+  width: 100% !important;
+  height: 520px !important;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.aboutImage:hover img {
+  transform: scale(1.05);
+}
+
+.aboutContent h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  margin-top: 12px;
+  line-height: 1.2;
+}
+
+.aboutContent > p {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.aboutContent > p:last-of-type {
+  margin-bottom: 40px;
+}
+
+.aboutStats {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 40px !important;
+  margin: 48px 0;
+  padding: 48px;
+  background: var(--color-surface);
+  border-radius: 16px;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.statItem {
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--color-light);
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+}
+
+.statItem h3 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1;
+}
+
+.statItem p {
+  font-size: 15px;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.aboutCta {
+  display: flex !important;
+  gap: 16px !important;
+  margin-top: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+.aboutCta a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ====================================================
    RESPONSIVE
    ==================================================== */
 
@@ -1162,6 +1387,13 @@ a {
   .contactContainer {
     grid-template-columns: 1fr !important;
     gap: 48px !important;
+  }
+  .aboutContainer {
+    gap: 48px !important;
+  }
+  .aboutStats {
+    gap: 32px !important;
+    padding: 40px;
   }
 }
 
@@ -1265,6 +1497,38 @@ a {
   }
   .formSubmitBtn {
     padding: 14px 24px !important;
+  }
+  .aboutSection {
+    padding: 80px 20px !important;
+  }
+  .aboutContainer {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .aboutImage img {
+    height: 350px !important;
+  }
+  .aboutStats {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin: 32px 0;
+    padding: 32px;
+  }
+  .statItem {
+    padding: 20px;
+  }
+  .statItem h3 {
+    font-size: 36px;
+  }
+  .statItem p {
+    font-size: 14px;
+  }
+  .aboutCta {
+    flex-direction: column;
+  }
+  .aboutCta a {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -1979,6 +2243,8 @@ a {
   .header { padding: 20px 32px; }
   .detailHeroInner { gap: 40px; }
   .detailContentInner { gap: 48px; }
+  .aboutContainer { gap: 48px !important; }
+  .aboutStats { gap: 24px !important; padding: 24px; }
 }
 
 @media (max-width: 768px) {

@@ -66,7 +66,7 @@ export async function POST(request) {
                 : ""
             }
           </table>
-          <p style="color: #64748B; font-size: 12px;">This is an automated message from your Sagar Boats website.</p>
+          <p style="color: #64748B; font-size: 12px;">This is an automated message from your Swastik Boats website.</p>
         </div>
       `,
     };
@@ -75,11 +75,11 @@ export async function POST(request) {
     const userMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: "We Received Your Quote Request — Sagar Boats",
+      subject: "We Received Your Quote Request — Swastik Boats",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #0B1D26; color: white; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
-            <h1 style="margin: 0;">Sagar Boats</h1>
+            <h1 style="margin: 0;">Swastik Boats</h1>
           </div>
           <h2 style="color: #0B1D26;">Thank You, ${name}!</h2>
           <p style="color: #64748B; line-height: 1.6;">
@@ -97,7 +97,7 @@ export async function POST(request) {
           </p>
           <p style="color: #64748B; margin-top: 30px; font-size: 12px; border-top: 1px solid #E2E8F0; padding-top: 15px;">
             Best regards,<br/>
-            <strong>Sagar Boats Team</strong>
+            <strong>Swastik Boats Team</strong>
           </p>
         </div>
       `,

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
+import Counter from "../components/Counter";
 import products from "../data/products";
 
 export default function Home() {
@@ -11,6 +12,38 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+
+      {/* ── About Section ─────────────────────── */}
+      <section className="aboutSection">
+        <div className="aboutContainer">
+          <div className="aboutImage">
+            <img src="/placeholder.jpg" alt="Swastik Boats Craftsmanship" />
+          </div>
+          <div className="aboutContent">
+            <span className="hero-label">Our Story</span>
+            <h2>About Us</h2>
+            <p>
+              Swastik Boats has been at the forefront of precision boat manufacturing for over two decades. 
+              Our commitment to excellence, innovation, and quality craftsmanship has made us the trusted choice 
+              for competitive rowers, rowing clubs, and athletic organizations worldwide.
+            </p>
+            <p>
+              From humble beginnings as a small workshop to becoming an industry leader, we've maintained 
+              our core values: precision engineering, sustainable practices, and unwavering dedication to performance. 
+              Every boat we build carries our legacy of expertise and passion for rowing.
+            </p>
+            
+            <div className="aboutStats">
+              <Counter finalNumber={25} label="Years of Excellence" />
+              <Counter finalNumber={500} label="Boats Delivered" />
+            </div>
+            
+            <div className="aboutCta">
+              <Link href="/gallery" className="cta-outline">View Our Work</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Products ──────────────────────── */}
       <section className="highlightProducts">
@@ -57,12 +90,12 @@ export default function Home() {
       <section className="ctaBanner">
         <h2>Ready to Get on the Water?</h2>
         <p>Contact us to discuss your custom boat requirements.</p>
-        <button className="cta">Get in Touch</button>
+        <Link href="/contact" className="cta">Get in Touch</Link>
       </section>
 
       {/* ── Footer ────────────────────────── */}
       <footer className="footer">
-        © 2026 Sagar Boats. All rights reserved.
+        © 2026 Swastik Boats. All rights reserved.
       </footer>
     </>
   );

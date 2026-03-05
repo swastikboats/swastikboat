@@ -1,5 +1,6 @@
 import "./globals.css";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import LoadingScreen from "../components/LoadingScreen";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata = {
-  title: "Sagar Boats",
+  title: "Swastik Boats",
   description: "Precision Boats Built for Performance",
 };
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
       <body>
+        <LoadingScreen />
         {children}
       </body>
     </html>

@@ -39,11 +39,6 @@ export default function Hero() {
           High-performance rowing boats engineered for speed,
           durability and precision craftsmanship since 1998.
         </p>
-
-        <div className="heroBtns">
-          <button className="cta">Explore Boats</button>
-          <button className="cta-outline">Learn More</button>
-        </div>
       </div>
 
       {/* Slide indicators */}

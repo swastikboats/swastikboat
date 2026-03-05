@@ -62,7 +62,7 @@ export default function ProductsPage() {
         <button className="cta">Get in Touch</button>
       </section>
 
-      <footer className="footer">© 2026 Sagar Boats. All rights reserved.</footer>
+      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
     </>
   );
 }
