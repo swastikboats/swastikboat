@@ -107,7 +107,7 @@ export default async function ProductDetail({ params }) {
       </section>
 
       {/* ── CTA Banner ────────────────────── */}
-      <section className="ctaBanner\">
+      <section className="ctaBanner">
         <h2>Ready to Get on the Water?</h2>
         <p>Contact us to discuss your custom boat requirements.</p>
         <Link href="/contact" className="cta">Get in Touch</Link>

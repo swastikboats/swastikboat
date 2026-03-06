@@ -273,103 +273,6 @@ a {
   justify-content: center;
   overflow: hidden;
   background: var(--color-ocean);
-}
-
-.heroBg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: opacity 1s ease-in-out;
-}
-
-.heroBg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(11, 29, 38, 0.5) 0%,
-    rgba(11, 29, 38, 0.3) 40%,
-    rgba(11, 29, 38, 0.7) 100%
-  );
-}
-
-.heroOverlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 700px;
-  padding: 0 24px;
-}
-
-.heroOverlay .hero-label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 20px;
-}
-
-.heroOverlay h1 {
-  font-size: clamp(36px, 6vw, 64px);
-  line-height: 1.18;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-.heroOverlay p {
-  margin-top: 20px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.75);
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.heroBtns {
-  display: flex !important;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 36px;
-}
-
-.heroIndicators {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 3;
-}
-
-.heroIndicators span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.heroIndicators span.active {
-  background: var(--color-accent);
-  width: 28px;
-  border-radius: 5px;
-}
-
-/* Ensure page content sits below fixed header by default */
-.siteContent {
-  padding-top: var(--header-height);
-}
-
-/* Pull the homepage hero up underneath the fixed header so it overlays */
-.hero {
   margin-top: calc(var(--header-height) * -1);
 }
 
@@ -411,6 +314,7 @@ a {
   font-family: var(--font-body), system-ui, sans-serif;
   transition: all 0.3s ease;
   text-decoration: none;
+  display: inline-block;
 }
 
 .cta-outline:hover {
@@ -1257,7 +1161,7 @@ a {
 .aboutSection {
   padding: 120px 24px !important;
   background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-light) 100%) !important;
-  margin-top: 0 !important;
+  scroll-margin-top: 88px;
 }
 
 .aboutContainer {
@@ -1645,6 +1549,8 @@ a {
   justify-content: center;
   overflow: hidden;
   background: var(--color-ocean);
+  margin-top: calc(var(--header-height) * -1);
+  margin-bottom: -150px;
 }
 
 .heroBg {
