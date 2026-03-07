@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function ProductImageCarousel({ images, title }) {
   const [index, setIndex] = useState(0);
-  const imageList = images && images.length > 0 ? images : [images];
+  const imageList = images && images.length > 0 ? images : ["/placeholder.jpg"];
 
   useEffect(() => {
     if (imageList.length <= 1) return;

@@ -51,7 +51,7 @@ export default function GalleryPage() {
     },
     {
       id: 8,
-      image: "/boats/single scull heavyweight.jpg",
+      image: "/boats/single scull heavyweight .jpg",
       title: "Single Scull Heavyweight",
       description: "Single scull engineered for maximum performance.",
     },

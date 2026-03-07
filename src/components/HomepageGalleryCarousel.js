@@ -2,18 +2,18 @@
 
 import { useState, useEffect } from "react";
 
-export default function HomepageGalleryCarousel() {
-  const galleryImages = [
-    { id: 1, src: "/boats/single kudrat ali.jpg", alt: "Single Scull" },
-    { id: 2, src: "/boats/double scull.jpg", alt: "Double Scull" },
-    { id: 3, src: "/boats/four coxless heavy.jpg", alt: "Four Coxless" },
-    { id: 4, src: "/boats/group photo for start.jpg", alt: "Group Training" },
-    { id: 5, src: "/boats/heavyweight double scull.jpg", alt: "Heavyweight Double Scull" },
-    { id: 6, src: "/boats/double scull close.jpg", alt: "Double Scull Close Up" },
-    { id: 7, src: "/boats/single scull heavyweight.jpg", alt: "Single Scull Heavyweight" },
-    { id: 8, src: "/boats/group.jpg", alt: "Group Photo" },
-  ];
+const galleryImages = [
+  { id: 1, src: "/boats/single kudrat ali.jpg", alt: "Single Scull" },
+  { id: 2, src: "/boats/double scull.jpg", alt: "Double Scull" },
+  { id: 3, src: "/boats/four coxless heavy.jpg", alt: "Four Coxless" },
+  { id: 4, src: "/boats/group photo for start.jpg", alt: "Group Training" },
+  { id: 5, src: "/boats/heavyweight double scull.jpg", alt: "Heavyweight Double Scull" },
+  { id: 6, src: "/boats/double scull close.jpg", alt: "Double Scull Close Up" },
+  { id: 7, src: "/boats/single scull heavyweight .jpg", alt: "Single Scull Heavyweight" },
+  { id: 8, src: "/boats/group.jpg", alt: "Group Photo" },
+];
 
+export default function HomepageGalleryCarousel() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function HomepageGalleryCarousel() {
       setIndex((prev) => (prev + 1) % galleryImages.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, [galleryImages.length]);
+  }, []);
 
   return (
     <div className="homepageGalleryCarouselWrapper">

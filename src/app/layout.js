@@ -17,7 +17,12 @@ const dmSerif = DM_Serif_Display({
 export const metadata = {
   title: "Swastik Boats",
   description: "Precision Boats Built for Performance",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }) {
