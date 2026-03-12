@@ -30,7 +30,10 @@ export default function Header({ variant = "transparent" }) {
   return (
     <>
       <header className={headerClass}>
-        <Link href="/" className="logo">Swastik Boats</Link>
+        <Link href="/" className="logo">
+          <img src="/logo.png" alt="Swastik Boats" className="logoImg" />
+          <span>Swastik Boats</span>
+        </Link>
 
         <nav className="nav">
           <Link href="/">Home</Link>
