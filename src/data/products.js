@@ -233,7 +233,6 @@ const products = [
     images: [
       "/boats/four heavy.jpg",
       "/boats/four heavyweight .jpeg",
-      "/boats/group.jpg",
     ],
     description:
       "The Coxed Fours (4+) is a precision-engineered five-person crew boat — four rowers plus coxswain — designed for competitive rowing at the highest level. Available in Lightweight (LW) and Heavyweight (HW) variants, each optimized for athletes of different body weights. Built with advanced composite materials and fine hull design for superior speed, stability, and crew coordination.",
@@ -294,9 +293,9 @@ const products = [
     title: "Eights",
     subtitle: "Eight-person crew boat for elite competitive rowing",
     category: "Boats",
-    image: "/boats/Eighter rowing boat.jpeg",
+    image: "/boats/eightboat.jpg",
     images: [
-      "/boats/Eighter rowing boat.jpeg",
+      "/boats/eightboat.jpg",
     ],
     description:
       "The Eights (8+) is the premier eight-rower crew boat with coxswain, designed for elite athletes and rowing institutions competing at the highest international level. Available in Lightweight (LW) and Heavyweight (HW) variants, each engineered for maximum speed, power transfer, and crew synchronization. Built with advanced composite materials and fine hull design.",
