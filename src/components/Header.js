@@ -21,9 +21,9 @@ export default function Header({ variant = "transparent" }) {
   }, []);
 
   const isDark = variant === "dark";
-  const headerClass = isDark 
-    ? "header headerDark" 
-    : isScrolled 
+  const headerClass = isDark
+    ? "header headerDark"
+    : isScrolled
       ? "header headerScrolled"
       : "header";
 
@@ -43,19 +43,10 @@ export default function Header({ variant = "transparent" }) {
         </nav>
 
         <div className="socials">
-          <a href="#" title="Instagram">
-            IG
-          </a>
-          <a href="#" title="Facebook">
-            FB
-          </a>
-          <a href="#" title="Twitter">
-            TW
-          </a>
         </div>
 
         {/* Hamburger Menu Button */}
-        <button 
+        <button
           className="hamburger"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"

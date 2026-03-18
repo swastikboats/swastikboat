@@ -64,7 +64,7 @@ export default function AboutPage() {
             <div className="aboutBlock aboutBlockHighlight">
               <h3>International Recognition &amp; the Germany Invitation (1995)</h3>
               <p>
-                A significant milestone in Rajesh Lunawat's journey came in 1995, when he was invited to
+                A significant milestone in Rajesh Lunawat&apos;s journey came in 1995, when he was invited to
                 Germany by <strong>Klaus Filter</strong>, a renowned figure in the global rowing community
                 and a respected pioneer in rowing boat engineering.
               </p>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 manufacturing philosophy of Swastik Fibchem Limited.
               </p>
               <p>
-                Exposure to advanced boat design principles and production methods strengthened Lunawat's
+                Exposure to advanced boat design principles and production methods strengthened Lunawat&apos;s
                 determination to establish a world-class rowing boat manufacturing facility in India,
                 capable of producing equipment that could compete with established international brands.
               </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
             <div className="aboutBlock">
               <h3>Innovation in Composite Manufacturing</h3>
               <p>
-                Under Rajesh Lunawat's leadership, Swastik Fibchem Limited adopted advanced composite
+                Under Rajesh Lunawat&apos;s leadership, Swastik Fibchem Limited adopted advanced composite
                 manufacturing technologies that significantly improved boat performance.
               </p>
               <div className="materialsGrid">
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <div className="aboutBlock">
               <h3>Building an Indian Brand for the Global Rowing Community</h3>
               <p>
-                Rajesh Lunawat's vision extended beyond domestic manufacturing. From the beginning, he
+                Rajesh Lunawat&apos;s vision extended beyond domestic manufacturing. From the beginning, he
                 aimed to position Swastik Fibchem Limited as a globally competitive brand within the
                 international rowing industry.
               </p>
@@ -179,7 +179,7 @@ export default function AboutPage() {
               <h3>Looking Toward the Future</h3>
               <p>
                 As the global rowing community continues to evolve, Swastik Fibchem Limited remains focused
-                on innovation and international expansion. Guided by Rajesh Lunawat's entrepreneurial
+                on innovation and international expansion. Guided by Rajesh Lunawat&apos;s entrepreneurial
                 leadership and technical expertise, the company aims to further strengthen its presence in
                 international markets, competitive rowing programs, and sports federations.
               </p>

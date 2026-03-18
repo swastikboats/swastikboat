@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "../../../components/Header";
 import ProductCard from "../../../components/ProductCard";
 import ProductImageCarousel from "../../../components/ProductImageCarousel";
+import RequestQuoteButton from "../../../components/RequestQuoteButton";
 import products, { formatBoatClass } from "../../../data/products";
 
 const boatProducts = products.filter((p) => !p.isSparePart);
@@ -59,7 +60,7 @@ export default async function ProductDetail({ params }) {
             <p className="detailDesc">{product.description}</p>
 
             <div className="detailCta">
-              <Link href="/contact" className="cta">Request Quote</Link>
+              <RequestQuoteButton productTitle={product.title} />
               <a href="/boats/specifications.pdf" download className="cta" style={{ background: "var(--color-secondary)", display: "inline-block" }}>Download All Boats Specification Sheet (PDF)</a>
             </div>
           </div>

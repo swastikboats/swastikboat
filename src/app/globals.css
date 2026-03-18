@@ -38,10 +38,13 @@
 }
 
 @keyframes logoPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.8;
@@ -83,9 +86,11 @@
   0% {
     width: 0%;
   }
+
   50% {
     width: 100%;
   }
+
   100% {
     width: 100%;
   }
@@ -96,6 +101,7 @@
     opacity: 1;
     visibility: visible;
   }
+
   to {
     opacity: 0;
     visibility: hidden;
@@ -157,7 +163,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading), Georgia, serif;
 }
 
@@ -201,7 +210,7 @@ a {
   position: fixed !important;
   height: var(--header-height);
   background: var(--color-ocean) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo {
@@ -233,7 +242,7 @@ a {
 }
 
 .nav a {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -273,7 +282,7 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   text-decoration: none;
   font-size: 13px;
@@ -375,12 +384,10 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(11, 29, 38, 0.5) 0%,
-    rgba(11, 29, 38, 0.3) 40%,
-    rgba(11, 29, 38, 0.7) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(11, 29, 38, 0.5) 0%,
+      rgba(11, 29, 38, 0.3) 40%,
+      rgba(11, 29, 38, 0.7) 100%);
 }
 
 .heroOverlay {
@@ -413,7 +420,7 @@ a {
   margin-top: 20px;
   font-size: 18px;
   line-height: 1.7;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   max-width: 520px;
   margin-left: auto;
   margin-right: auto;
@@ -479,7 +486,7 @@ a {
 
 .cta-outline {
   padding: 14px 32px;
-  border: 1.5px solid rgba(255,255,255,0.35) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
   background: transparent !important;
   color: white !important;
   border-radius: 8px;
@@ -494,7 +501,7 @@ a {
 
 .cta-outline:hover {
   border-color: white !important;
-  background: rgba(255,255,255,0.08) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* ====================================================
@@ -575,7 +582,7 @@ a {
 
 .productCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
 }
 
 .productCard img {
@@ -596,7 +603,7 @@ a {
   left: 0;
   right: 0;
   padding: 32px;
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, transparent 100%);
   color: white;
   transform: translateY(10px);
   transition: transform 0.4s ease;
@@ -616,7 +623,7 @@ a {
 
 .productOverlay p {
   font-size: 14px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
 
@@ -679,12 +686,12 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(11,29,38,0);
+  background: rgba(11, 29, 38, 0);
   transition: background 0.4s ease;
 }
 
 .galleryGrid .galleryItem:hover::after {
-  background: rgba(11,29,38,0.15);
+  background: rgba(11, 29, 38, 0.15);
 }
 
 /* ====================================================
@@ -766,7 +773,7 @@ a {
 }
 
 .ctaBanner p {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 18px;
   max-width: 500px;
   margin: 0 auto 36px;
@@ -779,7 +786,7 @@ a {
 
 .footer {
   background: var(--color-primary) !important;
-  color: rgba(255,255,255,0.5) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
   text-align: center;
   padding: 32px;
   font-size: 14px;
@@ -791,7 +798,7 @@ a {
 
 .pageHero {
   background: var(--color-ocean) !important;
-  padding: 100px 24px 80px !important;
+  padding: 100px 24px 40px !important;
   text-align: center;
   color: white !important;
 }
@@ -816,7 +823,7 @@ a {
 
 .pageHero p {
   margin-top: 16px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 18px;
   max-width: 500px;
   margin-left: auto;
@@ -894,11 +901,11 @@ a {
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .breadcrumb a {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -908,11 +915,11 @@ a {
 }
 
 .breadcrumb span {
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .breadcrumb .current {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .detailHeroInner {
@@ -1020,14 +1027,14 @@ a {
 
 .detailHeroInfo .detailSubtitle {
   font-size: 18px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.5;
   margin-bottom: 28px;
 }
 
 .detailHeroInfo .detailDesc {
   font-size: 16px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
   margin-bottom: 32px;
 }
@@ -1403,7 +1410,7 @@ a {
 
 .overlayContent p {
   font-size: 14px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.5;
 }
 
@@ -1424,8 +1431,13 @@ a {
 }
 
 @keyframes lightboxFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .lightboxClose {
@@ -1468,6 +1480,7 @@ a {
     opacity: 0;
     transform: translateY(20px) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1524,21 +1537,76 @@ a {
 }
 
 /* ====================================================
+   CONTACT QUICK BAR
+   ==================================================== */
+
+.contactQuickBar {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  background: var(--color-light);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.contactQuickBtn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body), system-ui, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.contactQuickBtn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(14, 165, 233, 0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.12);
+}
+
+.contactQuickBtnStatic {
+  cursor: default;
+}
+
+.contactQuickBtnStatic:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.quickIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ====================================================
    CONTACT PAGE
    ==================================================== */
 
 .contactSection {
-  padding: 100px 24px !important;
+  padding: 60px 24px !important;
   background: var(--color-surface) !important;
 }
 
 .contactContainer {
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 80px !important;
-  align-items: start;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 30px !important;
+  align-items: center;
 }
 
 .contactInfo h2 {
@@ -1549,7 +1617,7 @@ a {
   color: var(--color-primary);
 }
 
-.contactInfo > p {
+.contactInfo>p {
   font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.7;
@@ -1558,42 +1626,42 @@ a {
 
 .infoCards {
   display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 20px !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
 }
 
 .infoCard {
-  padding: 24px;
+  padding: 16px 18px;
   background: var(--color-light);
-  border-radius: 12px;
-  border-left: 4px solid var(--color-accent);
+  border-radius: 10px;
+  border-left: 3px solid var(--color-accent);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .infoCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
 }
 
 .infoIcon {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.infoCard h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-primary);
+  font-size: 20px;
   margin-bottom: 6px;
 }
 
+.infoCard h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
 .infoCard p {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--color-text-muted);
 }
 
 .contactLink {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
@@ -1603,7 +1671,7 @@ a {
 
 .contactLink:hover {
   color: #0284c7;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 /* ====================================================
@@ -1611,6 +1679,7 @@ a {
    ==================================================== */
 
 .contactFormWrapper {
+  width: 100%;
   padding: 40px;
   background: var(--color-light);
   border-radius: 16px;
@@ -1728,6 +1797,7 @@ a {
     transform: scale(0);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -1808,7 +1878,7 @@ a {
   line-height: 1.2;
 }
 
-.aboutContent > p {
+.aboutContent>p {
   font-size: 16px;
   color: var(--color-text-muted);
   line-height: 1.8;
@@ -1816,7 +1886,7 @@ a {
   font-weight: 400;
 }
 
-.aboutContent > p:last-of-type {
+.aboutContent>p:last-of-type {
   margin-bottom: 40px;
 }
 
@@ -1882,47 +1952,60 @@ a {
   .productRow {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
   .productsGrid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
   .relatedGrid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
   .galleryGrid {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-auto-rows: 220px;
   }
+
   .galleryGrid .galleryItem:nth-child(1) {
     grid-column: span 2;
     grid-row: span 1;
   }
+
   .homepageGalleryCarouselWrapper {
     height: 420px;
   }
+
   .galleryGridLarge {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-auto-rows: 300px;
   }
+
   .galleryGridLarge .galleryCard:nth-child(1) {
     grid-column: span 2;
     grid-row: span 1;
   }
+
   .header {
     padding: 20px 32px;
   }
+
   .detailHeroInner {
     gap: 40px !important;
   }
+
   .detailContentInner {
     gap: 48px !important;
   }
+
   .contactContainer {
     grid-template-columns: 1fr !important;
     gap: 48px !important;
   }
+
   .aboutContainer {
     gap: 48px !important;
   }
+
   .aboutStats {
     gap: 32px !important;
     padding: 40px;
@@ -1933,145 +2016,185 @@ a {
   .header {
     padding: 16px 20px;
   }
+
   .nav {
     display: none !important;
   }
+
   .socials {
     display: none !important;
   }
+
   .hamburger {
     display: flex !important;
   }
+
   .mobileMenuOverlay {
     display: block !important;
   }
+
   .productRow {
     grid-template-columns: 1fr !important;
     max-width: 460px;
     margin-left: auto;
     margin-right: auto;
   }
+
   .productsGrid {
     grid-template-columns: 1fr !important;
     max-width: 460px;
     margin-left: auto;
     margin-right: auto;
   }
+
   .relatedGrid {
     grid-template-columns: 1fr !important;
     max-width: 460px;
     margin-left: auto;
     margin-right: auto;
   }
+
   .galleryGrid {
     grid-template-columns: 1fr 1fr !important;
     grid-auto-rows: 200px;
   }
+
   .galleryGrid .galleryItem:nth-child(1) {
     grid-column: span 2;
   }
+
   .homepageGalleryCarouselWrapper {
     height: 300px;
   }
+
   .galleryGridLarge {
     grid-template-columns: 1fr !important;
     grid-auto-rows: 280px;
   }
+
   .galleryGridLarge .galleryCard:nth-child(1) {
     grid-column: span 1;
     grid-row: span 1;
   }
+
   .highlightProducts {
     padding: 80px 20px;
   }
+
   .gallery {
     padding: 80px 20px;
   }
+
   .galleryPage {
     padding: 60px 20px !important;
   }
+
   .ctaBanner {
     padding: 70px 20px !important;
   }
+
   .hero {
     height: 100vh;
     min-height: 100vh;
     margin-bottom: 0;
   }
+
   .heroBtns {
     flex-direction: column;
     align-items: center;
   }
+
   .detailHeroInner {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
+
   .detailHeroImage img {
     height: 320px !important;
   }
+
   .detailContentInner {
     grid-template-columns: 1fr !important;
     gap: 48px !important;
   }
+
   .detailContent {
     padding: 60px 20px !important;
   }
+
   .relatedSection {
     padding: 60px 20px !important;
   }
+
   .pageHero {
     padding: 80px 20px 60px !important;
   }
+
   .productDetailHero {
     padding: calc(var(--header-height) + 16px) 20px 0 !important;
   }
+
   .detailCta {
     flex-direction: column;
   }
+
   .contactSection {
     padding: 60px 20px !important;
   }
+
   .contactContainer {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
+
   .contactFormWrapper {
     padding: 24px;
   }
+
   .formGroupRow {
     grid-template-columns: 1fr !important;
   }
+
   .formSubmitBtn {
     padding: 14px 24px !important;
   }
+
   .aboutSection {
     padding: 80px 20px !important;
   }
+
   .aboutContainer {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
+
   .aboutImage img {
     height: 350px !important;
   }
+
   .aboutStats {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
     margin: 32px 0;
     padding: 32px;
   }
+
   .statItem {
     padding: 20px;
   }
+
   .statItem h3 {
     font-size: 36px;
   }
+
   .statItem p {
     font-size: 14px;
   }
+
   .aboutCta {
     flex-direction: column;
   }
+
   .aboutCta a {
     width: 100%;
     text-align: center;
@@ -2082,9 +2205,11 @@ a {
   .galleryGrid {
     grid-template-columns: 1fr !important;
   }
+
   .galleryGrid .galleryItem:nth-child(1) {
     grid-column: span 1;
   }
+
   .homepageGalleryCarouselWrapper {
     height: 240px;
   }
@@ -2094,7 +2219,9 @@ a {
 .header {
   /* keep header fixed across pages (duplicate section) */
   position: fixed;
-  top: 0; left: 0; width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: var(--header-height);
   display: flex !important;
   justify-content: space-between;
@@ -2115,10 +2242,13 @@ a {
   text-decoration: none;
 }
 
-.nav { display: flex; gap: 32px; }
+.nav {
+  display: flex;
+  gap: 32px;
+}
 
 .nav a {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -2130,22 +2260,35 @@ a {
 .nav a::after {
   content: '';
   position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 2px;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
   background: var(--color-accent);
   transition: width 0.3s ease;
 }
 
-.nav a:hover { color: white; }
-.nav a:hover::after { width: 100%; }
+.nav a:hover {
+  color: white;
+}
 
-.socials { display: flex; gap: 14px; }
+.nav a:hover::after {
+  width: 100%;
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+}
 
 .socials a {
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   text-decoration: none;
   font-size: 13px;
@@ -2216,7 +2359,7 @@ a {
 
 .productCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
 }
 
 .productCard img {
@@ -2233,9 +2376,11 @@ a {
 
 .productOverlay {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 32px;
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, transparent 100%);
   color: white;
   transform: translateY(10px);
   transition: transform 0.4s ease;
@@ -2255,7 +2400,7 @@ a {
 
 .productOverlay p {
   font-size: 14px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
 
@@ -2270,7 +2415,9 @@ a {
   transition: gap 0.3s ease;
 }
 
-.productCard:hover .cardArrow { gap: 10px; }
+.productCard:hover .cardArrow {
+  gap: 10px;
+}
 
 /* ── Gallery Section ────────────────────────── */
 .gallery {
@@ -2313,12 +2460,12 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(11,29,38,0);
+  background: rgba(11, 29, 38, 0);
   transition: background 0.4s ease;
 }
 
 .galleryGrid .galleryItem:hover::after {
-  background: rgba(11,29,38,0.15);
+  background: rgba(11, 29, 38, 0.15);
 }
 
 /* ── Footer Teaser / CTA Banner ─────────────── */
@@ -2337,7 +2484,7 @@ a {
 }
 
 .ctaBanner p {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 18px;
   max-width: 500px;
   margin: 0 auto 36px;
@@ -2347,7 +2494,7 @@ a {
 /* ── Footer ─────────────────────────────────── */
 .footer {
   background: var(--color-primary);
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
   padding: 32px;
   font-size: 14px;
@@ -2356,10 +2503,12 @@ a {
 /* ── Dark Header (inner pages) ───────────────── */
 .headerDark {
   position: fixed !important;
-  top: 0; left: 0; width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: var(--header-height);
   background: var(--color-ocean);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ── Card Link Reset ────────────────────────── */
@@ -2407,7 +2556,7 @@ a {
 
 .pageHero p {
   margin-top: 16px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 18px;
   max-width: 500px;
   margin-left: auto;
@@ -2479,16 +2628,22 @@ a {
 }
 
 .breadcrumb a {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.breadcrumb a:hover { color: white; }
+.breadcrumb a:hover {
+  color: white;
+}
 
-.breadcrumb span { color: rgba(255,255,255,0.3); }
+.breadcrumb span {
+  color: rgba(255, 255, 255, 0.3);
+}
 
-.breadcrumb .current { color: rgba(255,255,255,0.8); }
+.breadcrumb .current {
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .detailHeroInner {
   max-width: 1280px;
@@ -2536,7 +2691,7 @@ a {
 
 .detailHeroInfo .detailSubtitle {
   font-size: 18px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.5;
   margin-bottom: 24px;
 }
@@ -2551,7 +2706,7 @@ a {
 
 .detailHeroInfo .detailDesc {
   font-size: 16px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
   margin-bottom: 32px;
 }
@@ -2859,16 +3014,49 @@ a {
 
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 1024px) {
-  .productRow { grid-template-columns: repeat(2, 1fr); }
-  .productsGrid { grid-template-columns: repeat(2, 1fr); }
-  .relatedGrid { grid-template-columns: repeat(2, 1fr); }
-  .galleryGrid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
-  .galleryGrid .galleryItem:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-  .header { padding: 20px 32px; }
-  .detailHeroInner { gap: 40px; }
-  .detailContentInner { gap: 48px; }
-  .aboutContainer { gap: 48px !important; }
-  .aboutStats { gap: 24px !important; padding: 24px; }
+  .productRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+
+  .galleryGrid .galleryItem:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .header {
+    padding: 20px 32px;
+  }
+
+  .detailHeroInner {
+    gap: 40px;
+  }
+
+  .detailContentInner {
+    gap: 48px;
+  }
+
+  .aboutContainer {
+    gap: 48px !important;
+  }
+
+  .aboutStats {
+    gap: 24px !important;
+    padding: 24px;
+  }
+
   .aboutFullContainer {
     grid-template-columns: 280px 1fr;
     gap: 48px;
@@ -2876,66 +3064,643 @@ a {
 }
 
 @media (max-width: 768px) {
-  .header { padding: 16px 20px; }
-  .nav { display: none; }
-  .socials { display: none; }
-  .productRow { grid-template-columns: 1fr; max-width: 460px; }
-  .productsGrid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
-  .relatedGrid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
-  .galleryGrid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
-  .galleryGrid .galleryItem:nth-child(1) { grid-column: span 2; }
-  .highlightProducts { padding: 80px 20px; }
-  .gallery { padding: 80px 20px; }
-  .ctaBanner { padding: 70px 20px; }
-  .heroBtns { flex-direction: column; align-items: center; }
-  .detailHeroInner { grid-template-columns: 1fr; gap: 32px; }
-  .detailHeroImage img { height: 320px; }
-  .detailContentInner { grid-template-columns: 1fr; gap: 48px; }
-  .detailContent { padding: 60px 20px; }
-  .relatedSection { padding: 60px 20px; }
-  .pageHero { padding: 80px 20px 60px; }
-  .productDetailHero { padding: calc(var(--header-height) + 16px) 20px 0; }
-  .detailCta { flex-direction: column; }
+  .header {
+    padding: 16px 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenuOverlay {
+    display: block;
+  }
+
+  .productRow {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px;
+  }
+
+  .galleryGrid .galleryItem:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .highlightProducts {
+    padding: 80px 20px;
+  }
+
+  .gallery {
+    padding: 80px 20px;
+  }
+
+  .ctaBanner {
+    padding: 70px 20px !important;
+  }
+
+  .heroBtns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Fix: Header-to-content gap on inner pages ── */
+  .pageHero {
+    padding: 120px 20px 50px !important;
+  }
+
+  /* ── Fix: Product detail hero spacing ── */
+  .productDetailHero {
+    padding: calc(var(--header-height) + 24px) 16px 0 !important;
+  }
+
+  .detailHeroInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* ── Fix: Product image — remove white space ── */
+  .productImageCarouselWrapper {
+    height: 280px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .productImageCarousel {
+    background: var(--color-ocean);
+  }
+
+  .productCarouselImage {
+    object-fit: cover !important;
+  }
+
+  .detailHeroImage img {
+    height: 280px;
+  }
+
+  /* ── Fix: Detail content ── */
+  .detailContentInner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .detailContent {
+    padding: 60px 16px;
+  }
+
+  .relatedSection {
+    padding: 60px 16px;
+  }
+
+  .detailCta {
+    flex-direction: column;
+  }
+
+  .detailCta .cta {
+    text-align: center;
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  /* ── Fix: Variant tables on mobile ── */
+  .variantsTableGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Fix: Quote popup — full width on mobile ── */
+  .quotePopupBackdrop {
+    padding: 12px 10px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .quotePopupBox {
+    max-width: 100%;
+    padding: 24px 16px;
+    max-height: 80vh;
+    border-radius: 12px;
+  }
+
+  .quotePopupBox h2 {
+    font-size: 20px;
+  }
+
+  .quotePopupForm .formGroupRow {
+    grid-template-columns: 1fr !important;
+  }
+
+  .quoteConfirmationBox {
+    max-width: 90%;
+    padding: 36px 20px;
+  }
+
+  /* ── Fix: Contact page layout ── */
+  .contactContainer {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .contactSection {
+    padding: 60px 16px !important;
+  }
+
+  .infoCards {
+    display: none !important;
+  }
+
+  /* ── Compact contact buttons (mobile only) ── */
+  .contactQuickBar {
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+
+  .contactQuickBtn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* ── Fix: Contact form ── */
+  .contactFormWrapper {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .contactForm h2 {
+    font-size: 22px;
+  }
+
+  .formGroupRow {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Fix: About page ── */
   .aboutFullContainer {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
   .aboutFullImageCol {
     position: static;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .aboutFullImage img {
     height: 360px;
     max-width: 400px;
     margin: 0 auto;
     border-radius: 16px;
   }
+
   .aboutFullSection {
     padding: 60px 20px;
   }
+
   .aboutBlock {
     padding: 28px;
   }
+
   .aboutList {
     grid-template-columns: 1fr;
   }
+
   .materialsGrid {
     grid-template-columns: 1fr;
+  }
+
+  /* ── Fix: Gallery page grid ── */
+  .galleryGridLarge {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: 240px;
+  }
+
+  .galleryGridLarge .galleryCard:nth-child(1) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .galleryPage {
+    padding: 60px 16px !important;
   }
 }
 
 @media (max-width: 480px) {
-  .galleryGrid { grid-template-columns: 1fr; }
-  .galleryGrid .galleryItem:nth-child(1) { grid-column: span 1; }
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryGrid .galleryItem:nth-child(1) {
+    grid-column: span 1;
+  }
+
   .aboutBlock {
     padding: 20px;
   }
+
   .aboutBlock h2 {
     font-size: 24px;
   }
+
   .aboutBlock h3 {
     font-size: 20px;
+  }
+
+  /* ── Ultra-narrow: product detail ── */
+  .productDetailHero {
+    padding: calc(var(--header-height) + 16px) 12px 0 !important;
+  }
+
+  .productImageCarouselWrapper {
+    height: 220px;
+    margin-bottom: 16px;
+  }
+
+  .detailHeroInfo h1 {
+    font-size: 24px;
+  }
+
+  .detailHeroInfo .detailSubtitle {
+    font-size: 15px;
+  }
+
+  .detailHeroInfo .detailDesc {
+    font-size: 14px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  /* ── Product cards ── */
+  .productCard img {
+    height: 240px !important;
+  }
+
+  .productsGrid {
+    max-width: 100%;
+  }
+
+  /* ── Quote popup ── */
+  .quotePopupBackdrop {
+    padding: 8px 6px;
+    padding-top: 50px;
+  }
+
+  .quotePopupBox {
+    padding: 20px 12px;
+  }
+
+  .quotePopupBox h2 {
+    font-size: 18px;
+  }
+
+  /* ── Contact quick bar ── */
+  .contactQuickBar {
+    padding: 14px 12px;
+    gap: 6px;
+  }
+
+  .contactQuickBtn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  /* ── Page hero ── */
+  .pageHero {
+    padding: 110px 16px 40px !important;
+  }
+
+  .pageHero h1 {
+    font-size: 28px;
+  }
+
+  .pageHero p {
+    font-size: 14px;
+  }
+
+  /* ── Contact info cards on tiny screens ── */
+  .infoCards {
+    display: none !important;
+  }
+
+  /* ── Variant specs table ── */
+  .variantsTablesSection {
+    padding: 16px;
+  }
+
+  .variantTableWrapper {
+    padding: 14px;
+  }
+
+  .mainSpecsBox {
+    padding: 16px;
+  }
+
+  .specsGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ====================================================
+   CAROUSEL NAVIGATION ARROWS (Homepage Gallery)
+   ==================================================== */
+
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.carouselArrow:hover {
+  background: rgba(14, 165, 233, 0.85);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carouselArrowLeft {
+  left: 16px;
+}
+
+.carouselArrowRight {
+  right: 16px;
+}
+
+/* ====================================================
+   LIGHTBOX NAVIGATION ARROWS (Gallery Page)
+   ==================================================== */
+
+.lightboxArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.lightboxArrow:hover {
+  background: rgba(14, 165, 233, 0.8);
+  border-color: var(--color-accent);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightboxArrowLeft {
+  left: 24px;
+}
+
+.lightboxArrowRight {
+  right: 24px;
+}
+
+.lightboxCounter {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+/* ====================================================
+   QUOTE POPUP (Product Page)
+   ==================================================== */
+
+.quotePopupBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  animation: lightboxFadeIn 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.quotePopupBox {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: lightboxSlideUp 0.3s ease;
+}
+
+.quotePopupBox h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-primary);
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.quotePopupSubtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.quotePopupSubtitle strong {
+  color: var(--color-accent);
+}
+
+.quotePopupClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 22px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.quotePopupClose:hover {
+  background: var(--color-light);
+  color: var(--color-primary);
+}
+
+.quotePopupForm .formGroup {
+  margin-bottom: 16px;
+}
+
+.quotePopupForm .formGroup label {
+  font-size: 13px;
+}
+
+.quotePopupForm .formGroup input,
+.quotePopupForm .formGroup select,
+.quotePopupForm .formGroup textarea {
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.quoteConfirmationBox {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: lightboxSlideUp 0.3s ease;
+}
+
+.quoteConfirmationBox .successIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #0284c7 100%);
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: scaleIn 0.4s ease;
+}
+
+.quoteConfirmationBox h3 {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.quoteConfirmationBox p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.quoteConfirmationBox p strong {
+  color: var(--color-accent);
+}
+
+/* ── Responsive: Quote Popup & Arrows ─── */
+@media (max-width: 768px) {
+  .carouselArrow {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .carouselArrowLeft {
+    left: 10px;
+  }
+
+  .carouselArrowRight {
+    right: 10px;
+  }
+
+  .lightboxArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .lightboxArrowLeft {
+    left: 10px;
+  }
+
+  .lightboxArrowRight {
+    right: 10px;
+  }
+
+  .quotePopupBackdrop {
+    padding: 20px 12px;
+  }
+
+  .quotePopupBox {
+    padding: 28px 20px;
+  }
+
+  .infoCards {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .lightboxArrow {
+    width: 34px;
+    height: 34px;
+    font-size: 22px;
+  }
+
+  .lightboxArrowLeft {
+    left: 6px;
+  }
+
+  .lightboxArrowRight {
+    right: 6px;
   }
 }

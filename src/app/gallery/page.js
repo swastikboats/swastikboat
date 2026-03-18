@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Header from "../../components/Header";
 
 export default function GalleryPage() {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const galleryItems = [
     {
@@ -127,18 +127,28 @@ export default function GalleryPage() {
       title: "Jaguar Training Scull",
       description: "Training single scull – Jaguar model.",
     },
-
   ];
 
   const handleClose = useCallback(() => {
-    setSelectedItem(null);
+    setSelectedIndex(null);
   }, []);
+
+  const goNext = useCallback(() => {
+    setSelectedIndex((prev) => (prev + 1) % galleryItems.length);
+  }, [galleryItems.length]);
+
+  const goPrev = useCallback(() => {
+    setSelectedIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+  }, [galleryItems.length]);
 
   useEffect(() => {
     const onKeyDown = (e) => {
+      if (selectedIndex === null) return;
       if (e.key === "Escape") handleClose();
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
     };
-    if (selectedItem) {
+    if (selectedIndex !== null) {
       document.addEventListener("keydown", onKeyDown);
       document.body.style.overflow = "hidden";
     }
@@ -146,7 +156,9 @@ export default function GalleryPage() {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "";
     };
-  }, [selectedItem, handleClose]);
+  }, [selectedIndex, handleClose, goNext, goPrev]);
+
+  const selectedItem = selectedIndex !== null ? galleryItems[selectedIndex] : null;
 
   return (
     <>
@@ -168,7 +180,7 @@ export default function GalleryPage() {
             <div
               key={item.id}
               className={`galleryCard ${idx === 0 ? "featured" : ""}`}
-              onClick={() => setSelectedItem(item)}
+              onClick={() => setSelectedIndex(idx)}
             >
               <div className="galleryImageWrapper">
                 <img src={item.image} alt={item.title} />
@@ -184,7 +196,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* ── Lightbox Modal ────────────────── */}
+      {/* ── Lightbox Modal with Navigation ────────────────── */}
       {selectedItem && (
         <div className="lightboxOverlay" onClick={handleClose}>
           <button
@@ -197,6 +209,19 @@ export default function GalleryPage() {
           >
             ✕
           </button>
+
+          {/* Previous Arrow */}
+          <button
+            className="lightboxArrow lightboxArrowLeft"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            aria-label="Previous image"
+          >
+            &#8249;
+          </button>
+
           <div
             className="lightboxContent"
             onClick={(e) => e.stopPropagation()}
@@ -209,8 +234,21 @@ export default function GalleryPage() {
             <div className="lightboxCaption">
               <h3>{selectedItem.title}</h3>
               <p>{selectedItem.description}</p>
+              <span className="lightboxCounter">{selectedIndex + 1} / {galleryItems.length}</span>
             </div>
           </div>
+
+          {/* Next Arrow */}
+          <button
+            className="lightboxArrow lightboxArrowRight"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            aria-label="Next image"
+          >
+            &#8250;
+          </button>
         </div>
       )}
 

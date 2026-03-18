@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
   { id: 1, src: "/boats/single scull kudrat ali.jpg", alt: "Single Scull" },
@@ -16,12 +16,18 @@ const galleryImages = [
 export default function HomepageGalleryCarousel() {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 2000);
-    return () => clearInterval(interval);
+  const goNext = useCallback(() => {
+    setIndex((prev) => (prev + 1) % galleryImages.length);
   }, []);
+
+  const goPrev = useCallback(() => {
+    setIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(goNext, 2000);
+    return () => clearInterval(interval);
+  }, [goNext]);
 
   return (
     <div className="homepageGalleryCarouselWrapper">
@@ -44,6 +50,14 @@ export default function HomepageGalleryCarousel() {
           />
         ))}
       </div>
+
+      {/* Navigation Arrows */}
+      <button className="carouselArrow carouselArrowLeft" onClick={goPrev} aria-label="Previous image">
+        &#8249;
+      </button>
+      <button className="carouselArrow carouselArrowRight" onClick={goNext} aria-label="Next image">
+        &#8250;
+      </button>
 
       {/* Indicators */}
       <div className="galleryCarouselIndicators">
