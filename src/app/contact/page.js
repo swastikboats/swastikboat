@@ -66,7 +66,6 @@ export default function ContactPage() {
           boatInterest: "Elite Scull Boat",
           message: "",
         });
-        // Reset form after 3 seconds
         setTimeout(() => setSubmitted(false), 3000);
       } else {
         alert("Error submitting form. Please try again.");
@@ -93,42 +92,38 @@ export default function ContactPage() {
         </p>
       </section>
 
+      {/* ── Quick Contact Buttons ──────────── */}
+      <div className="contactQuickBar">
+        <a
+          href="https://wa.me/919529203461?text=Hi, I'm interested in learning more about Swastik Boats and would like to request a quote."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contactQuickBtn"
+        >
+          <span className="quickIcon">💬</span> WhatsApp
+        </a>
+        <a href="tel:+919822398641" className="contactQuickBtn">
+          <span className="quickIcon">☎️</span> Call
+        </a>
+        <a href="mailto:swastikboats@gmail.com" className="contactQuickBtn">
+          <span className="quickIcon">📧</span> Email
+        </a>
+        <span className="contactQuickBtn contactQuickBtnStatic">
+          <span className="quickIcon">📍</span> Bangalore, India
+        </span>
+      </div>
+
       {/* ── Contact Section ───────────────── */}
       <section className="contactSection">
         <div className="contactContainer">
           {/* ── Contact Info ──────────────────── */}
-          <div className="contactInfo">
-            <h2>How We Can Help</h2>
-            <p>
-              Whether you're a competitive rower, training academy, or rowing
+          <div className="contactInfo text-center mb-8">
+            <h2 className="text-3xl font-semibold mb-4 text-[#0F172A]">How We Can Help</h2>
+            <p className="text-[#64748B] max-w-2xl mx-auto">
+              Whether you&apos;re a competitive rower, training academy, or rowing
               club, Swastik Boats is here to help you find the perfect vessel for
               your needs. Reach out anytime.
             </p>
-
-            <div className="infoCards">
-              <div className="infoCard">
-                <div className="infoIcon">💬</div>
-                <h3>WhatsApp</h3>
-                <a href="https://wa.me/919529203461?text=Hi, I'm interested in learning more about Swastik Boats and would like to request a quote." target="_blank" rel="noopener noreferrer" className="contactLink">+91 95292 03461</a>
-              </div>
-              <div className="infoCard">
-                <div className="infoIcon">📧</div>
-                <h3>Email</h3>
-                <p>
-                  <a href="mailto:swastikboats@gmail.com" className="contactLink">swastikboats@gmail.com</a>
-                </p>
-              </div>
-              <div className="infoCard">
-                <div className="infoIcon">☎️</div>
-                <h3>Phone</h3>
-                <a href="tel:+919822398641" className="contactLink">+91 98223 98641</a>
-              </div>
-              <div className="infoCard">
-                <div className="infoIcon">📍</div>
-                <h3>Location</h3>
-                <p>Bangalore, India</p>
-              </div>
-            </div>
           </div>
 
           {/* ── Contact Form ──────────────────── */}

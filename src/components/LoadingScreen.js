@@ -28,7 +28,9 @@ export default function LoadingScreen() {
   return (
     <div className="loadingScreen">
       <div className="loadingContent">
-        <div className="loadingLogo">🚣</div>
+        <div className="loadingLogo">
+          <img src="/logo.png" alt="" className="loadingLogoImg" />
+        </div>
         <h1>Swastik Boats</h1>
         <p>Precision Boats Built for Performance</p>
         <div className="loadingBar">
