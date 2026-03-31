@@ -38,6 +38,7 @@ export default function Header({ variant = "transparent" }) {
         <nav className="nav">
           <Link href="/">Home</Link>
           <Link href="/products">Products</Link>
+          <Link href="/about">About Us</Link>
           <Link href="/gallery">Gallery</Link>
           <Link href="/contact">Contact</Link>
         </nav>
@@ -63,6 +64,7 @@ export default function Header({ variant = "transparent" }) {
           <nav className="mobileMenu">
             <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
             <Link href="/products" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
             <Link href="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </nav>
