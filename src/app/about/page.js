@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "../../components/Header";
+import Counter from "../../components/Counter";
 
 export default function AboutPage() {
   return (
@@ -9,7 +10,7 @@ export default function AboutPage() {
       {/* ── Page Hero ── */}
       <section className="pageHero aboutPageHero">
         <span className="hero-label">Our Legacy</span>
-        <h1>About Swastik Fibchem Limited</h1>
+        <h1>About Us</h1>
         <p>
           Three decades of pioneering high-performance rowing boat manufacturing in India.
         </p>
@@ -22,7 +23,7 @@ export default function AboutPage() {
             <div className="aboutFullImage">
               <img
                 src="/boats/Rajesh Lunawat Founder and Creator of the Legacy.jpg"
-                alt="Rajesh Lunawat – Founder of Swastik Fibchem Limited"
+                alt="Rajesh Lunawat – Founder of Swastik Fibchem Industry"
               />
             </div>
             <div className="founderNameplate">
@@ -38,10 +39,16 @@ export default function AboutPage() {
               <p>
                 Entrepreneurship is often defined by vision — the ability to recognize opportunities,
                 innovate within specialized industries, and build organizations that endure over decades.
-                <strong> Rajesh Lunawat</strong>, the founder of Swastik Fibchem Limited, exemplifies this
+                <strong> Rajesh Lunawat</strong>, the founder of Swastik Fibchem Industry, exemplifies this
                 spirit through his pioneering work in the manufacturing of high-performance rowing boats
                 and composite marine products in India.
               </p>
+            </div>
+
+            {/* ── Stats ── */}
+            <div className="aboutStats">
+              <Counter finalNumber={30} label="Years of Excellence" />
+              <Counter finalNumber={500} label="Boats Delivered and Exported" />
             </div>
 
             {/* ── Early Vision ── */}
@@ -54,7 +61,7 @@ export default function AboutPage() {
                 building a company capable of producing international-quality racing rowing shells in India.
               </p>
               <p>
-                This vision led to the founding of <strong>Swastik Fibchem Limited in 1995</strong>,
+                This vision led to the founding of <strong>Swastik Fibchem Industry in 1995</strong>,
                 marking the beginning of a long journey dedicated to innovation, craftsmanship, and the
                 development of professional rowing equipment.
               </p>
@@ -62,17 +69,16 @@ export default function AboutPage() {
 
             {/* ── Germany Invitation ── */}
             <div className="aboutBlock aboutBlockHighlight">
-              <h3>International Recognition &amp; the Germany Invitation (1995)</h3>
+              <h3>International Recognition &amp; the Germany Invitation (1997)</h3>
               <p>
-                A significant milestone in Rajesh Lunawat&apos;s journey came in 1995, when he was invited to
-                Germany by <strong>Klaus Filter</strong>, a renowned figure in the global rowing community
-                and a respected pioneer in rowing boat engineering.
+                A significant milestone in Rajesh Lunawat&apos;s journey came in 1997, when he was invited to
+                Germany by <strong>Mr. Klaus Filter</strong>, the technical director of FISA.
               </p>
               <p>
                 This invitation provided Lunawat with a valuable opportunity to gain deeper insight into
                 European boat-building techniques, precision engineering, and international standards of
                 racing shells. The experience in Germany helped shape the technical direction and
-                manufacturing philosophy of Swastik Fibchem Limited.
+                manufacturing philosophy of Swastik Fibchem Industry.
               </p>
               <p>
                 Exposure to advanced boat design principles and production methods strengthened Lunawat&apos;s
@@ -83,9 +89,9 @@ export default function AboutPage() {
 
             {/* ── Establishing the Company ── */}
             <div className="aboutBlock">
-              <h3>Establishing Swastik Fibchem Limited</h3>
+              <h3>Establishing Swastik Fibchem Industry</h3>
               <p>
-                Following this formative period, Swastik Fibchem Limited began developing and manufacturing
+                Following this formative period, Swastik Fibchem Industry began developing and manufacturing
                 high-performance racing rowing boats designed for athletes, rowing clubs, universities, and
                 sports federations.
               </p>
@@ -107,7 +113,7 @@ export default function AboutPage() {
             <div className="aboutBlock">
               <h3>Innovation in Composite Manufacturing</h3>
               <p>
-                Under Rajesh Lunawat&apos;s leadership, Swastik Fibchem Limited adopted advanced composite
+                Under Rajesh Lunawat&apos;s leadership, Swastik Fibchem Industry adopted advanced composite
                 manufacturing technologies that significantly improved boat performance.
               </p>
               <div className="materialsGrid">
@@ -139,7 +145,7 @@ export default function AboutPage() {
               <h3>Building an Indian Brand for the Global Rowing Community</h3>
               <p>
                 Rajesh Lunawat&apos;s vision extended beyond domestic manufacturing. From the beginning, he
-                aimed to position Swastik Fibchem Limited as a globally competitive brand within the
+                aimed to position Swastik Fibchem Industry as a globally competitive brand within the
                 international rowing industry.
               </p>
               <p>
@@ -154,7 +160,7 @@ export default function AboutPage() {
               <h3>Commitment to Quality &amp; Performance</h3>
               <p>
                 For Lunawat, manufacturing high-performance boats is not simply a business — it is a pursuit
-                of engineering excellence. Each rowing shell produced by Swastik Fibchem Limited is designed
+                of engineering excellence. Each rowing shell produced by Swastik Fibchem Industry is designed
                 with careful attention to structural integrity, hydrodynamic performance, and athlete comfort.
               </p>
               <p>
@@ -167,7 +173,7 @@ export default function AboutPage() {
             <div className="aboutBlock">
               <h3>Contribution to the Sport of Rowing</h3>
               <p>
-                Through the establishment of Swastik Fibchem Limited in 1995, Rajesh Lunawat contributed
+                Through the establishment of Swastik Fibchem Industry in 1995, Rajesh Lunawat contributed
                 significantly to the growth of rowing equipment manufacturing in India. His work has helped
                 make professional racing boats accessible to athletes and rowing institutions while promoting
                 the development of the sport across the country.
@@ -178,14 +184,14 @@ export default function AboutPage() {
             <div className="aboutBlock aboutBlockFuture">
               <h3>Looking Toward the Future</h3>
               <p>
-                As the global rowing community continues to evolve, Swastik Fibchem Limited remains focused
+                As the global rowing community continues to evolve, Swastik Fibchem Industry remains focused
                 on innovation and international expansion. Guided by Rajesh Lunawat&apos;s entrepreneurial
                 leadership and technical expertise, the company aims to further strengthen its presence in
                 international markets, competitive rowing programs, and sports federations.
               </p>
               <p>
                 Through dedication, global exposure, and a commitment to engineering excellence, Rajesh
-                Lunawat has established Swastik Fibchem Limited as a respected name in the field of
+                Lunawat has established Swastik Fibchem Industry as a respected name in the field of
                 high-performance rowing boat manufacturing.
               </p>
             </div>

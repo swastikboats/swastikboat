@@ -109,7 +109,7 @@ export default function ContactPage() {
           <span className="quickIcon">📧</span> Email
         </a>
         <span className="contactQuickBtn contactQuickBtnStatic">
-          <span className="quickIcon">📍</span> Bangalore, India
+          <span className="quickIcon">📍</span> Pune, India
         </span>
       </div>
 
