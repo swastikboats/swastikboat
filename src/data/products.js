@@ -358,9 +358,8 @@ const products = [
     category: "Boats",
     image: "/boats/1 x traing close photo.jpeg",
     images: [
-      "/boats/1 x traing close photo.jpeg",
-      "/boats/1 x traning close photo.jpeg",
       "/boats/1 xphoto 1.jpeg",
+      "/boats/1 x traning close photo.jpeg",
       "/boats/1x photo 1a.jpeg",
       "/boats/1x traing full photo.jpeg",
     ],
@@ -372,6 +371,7 @@ const products = [
       crewWeightRange: "60–85 kg",
       boatWeight: "26 kg",
       length: "6100 mm",
+      variants: "LW available",
     },
     features: [
       "Stable hull design ideal for training and skill development",
@@ -406,6 +406,7 @@ const products = [
       crewWeightRange: "60–85 kg",
       boatWeight: "45 kg",
       length: "7950 mm",
+      variants: "LW, HW available",
     },
     features: [
       "Stable hull design ideal for pair training",
@@ -566,6 +567,33 @@ const products = [
     image: "/boats/spart part of drawn cover .jpeg",
     description: "Protective bow cover for hull protection.",
   },
+  {
+    slug: "life ring",
+    title: "Life Ring",
+    subtitle: "Protective Life Ring",
+    category: "Spare Parts",
+    isSparePart: true,
+    image: "/boats/life ring.jpeg",
+    description: "Protective Life Ring for safety.",
+  },
+  {
+    slug: "life jacket",
+    title: "Life Jacket",
+    subtitle: "Protective Life Jacket",
+    category: "Spare Parts",
+    isSparePart: true,
+    image: "/boats/life jecket.jpeg",
+    description: "Protective Life Jacket for safety.",
+  },
+  {
+    slug: "drawn cover",
+    title: "Drawn Cover",
+    subtitle: "Protective Drawn Cover",
+    category: "Spare Parts",
+    isSparePart: true,
+    image: "/boats/drawn cover.jpg",
+    description: "Protective Drawn Cover for safety.",
+  }
 ];
 
 // Boat class descriptions mapping
