@@ -66,7 +66,7 @@ export default function Home() {
           <p>Celebrating excellence in manufacturing and design.</p>
         </div>
         
-        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 24px" }}>
+        <div className="awardsCarouselContainer" style={{ maxWidth: 1000, margin: "0 auto", padding: "0 24px" }}>
             <ProductImageCarousel images={awardsPhotos} title="Awards" interval={4000} />
         </div>
       </section>
