@@ -33,7 +33,7 @@ const products = [
         avgCrewWeight: "70 kg",
         crewWeightRange: "60–75 kg",
         lengths: {
-          length: "7000 mm",
+          length: "7900 mm",
         },
         specs: {
           olympic: "14 kg",
@@ -349,6 +349,77 @@ const products = [
   },
 
   // ═══════════════════════════════════════════════════════
+  //  BOAT CATEGORY 6: SINGLE TRAINING
+  // ═══════════════════════════════════════════════════════
+  {
+    slug: "single-training",
+    title: "Single Training",
+    subtitle: "Training single scull for developing rowers",
+    category: "Boats",
+    image: "/boats/1 x traing close photo.jpeg",
+    images: [
+      "/boats/1 x traing close photo.jpeg",
+      "/boats/1 x traning close photo.jpeg",
+      "/boats/1 xphoto 1.jpeg",
+      "/boats/1x photo 1a.jpeg",
+      "/boats/1x traing full photo.jpeg",
+    ],
+    description:
+      "The Single Training boat is a durable, stable single scull designed for developing rowers and training programs. Built for durability and ease of use, it provides an ideal platform for athletes to build technique and confidence on the water. Engineered for crew weights ranging from 60–85 kg with a robust trainer-grade construction.",
+    specs: {
+      class: "1X (Training)",
+      type: "Single scull (training)",
+      crewWeightRange: "60–85 kg",
+      boatWeight: "26 kg",
+      length: "6100 mm",
+    },
+    features: [
+      "Stable hull design ideal for training and skill development",
+      "Durable construction for everyday use",
+      "Suitable for rowers 60–85 kg",
+      "Robust trainer-grade build at 26 kg",
+      "Compact 6100 mm length for manoeuvrability",
+      "Adjustable footplate and sliding seat system",
+      "Perfect for rowing clubs and institutions",
+      "Professional-grade build quality",
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════
+  //  BOAT CATEGORY 7: DOUBLE TRAINING
+  // ═══════════════════════════════════════════════════════
+  {
+    slug: "double-training",
+    title: "Double Training",
+    subtitle: "Training double scull for developing rowers",
+    category: "Boats",
+    image: "/boats/2 x racking photo.jpeg",
+    images: [
+      "/boats/2 x racking photo.jpeg",
+      "/boats/2x traning.jpeg",
+    ],
+    description:
+      "The Double Training boat is a stable, durable two-person scull designed for training programs and developing rowers. Built for reliability and everyday use, it allows pairs to develop synchronization and rowing technique. Engineered for crew weights from 60–85 kg with a robust trainer-grade construction.",
+    specs: {
+      class: "2X (Training)",
+      type: "Double scull (training)",
+      crewWeightRange: "60–85 kg",
+      boatWeight: "45 kg",
+      length: "7950 mm",
+    },
+    features: [
+      "Stable hull design ideal for pair training",
+      "Durable construction for everyday use",
+      "Suitable for rowers 60–85 kg",
+      "Robust trainer-grade build at 45 kg",
+      "7950 mm length for optimal stability",
+      "Synchronized two-rower configuration",
+      "Perfect for rowing clubs and institutions",
+      "Professional-grade build quality",
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════
   //  SPARE PARTS
   // ═══════════════════════════════════════════════════════
   {
@@ -380,12 +451,12 @@ const products = [
   },
   {
     slug: "spare-adjustable-seat",
-    title: "Adjustable Seat",
-    subtitle: "Adjustable seat for custom positioning",
+    title: "Adjustable Seat FURK",
+    subtitle: "Adjustable Seat FURK for custom positioning",
     category: "Spare Parts",
     isSparePart: true,
     image: "/boats/spar part of Seat adjustable.jpg",
-    description: "Adjustable seat for precise positioning.",
+    description: "Adjustable Seat FURK for precise positioning.",
   },
   {
     slug: "spare-aluminium-rails",

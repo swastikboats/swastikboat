@@ -64,8 +64,8 @@ export default function GalleryPage() {
     {
       id: 10,
       image: "/boats/single.jpg",
-      title: "Single Scull Training",
-      description: "Training boat for developing rowers.",
+      title: "Single Scull LW",
+      description: "Light weight boat for developing rowers.",
     },
     {
       id: 11,
@@ -88,8 +88,8 @@ export default function GalleryPage() {
     {
       id: 14,
       image: "/boats/double 2.jpg",
-      title: "Double Scull Alternative",
-      description: "Double scull viewed from water level.",
+      title: "Double Scull LW",
+      description: "Light weight Double scull viewed from water level.",
     },
     {
       id: 15,

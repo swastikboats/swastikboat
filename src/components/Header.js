@@ -43,9 +43,6 @@ export default function Header({ variant = "transparent" }) {
           <Link href="/contact">Contact</Link>
         </nav>
 
-        <div className="socials">
-        </div>
-
         {/* Hamburger Menu Button */}
         <button
           className="hamburger"
