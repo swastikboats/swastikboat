@@ -356,9 +356,10 @@ const products = [
     title: "Single Training",
     subtitle: "Training single scull for developing rowers",
     category: "Boats",
-    image: "/boats/1 x traing close photo.jpeg",
+    image: "/boats/1 xphoto 1.jpeg",
     images: [
       "/boats/1 xphoto 1.jpeg",
+      "/boats/1 x traing close photo.jpeg",
       "/boats/1 x traning close photo.jpeg",
       "/boats/1x photo 1a.jpeg",
       "/boats/1x traing full photo.jpeg",

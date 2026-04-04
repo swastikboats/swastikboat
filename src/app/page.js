@@ -2,11 +2,20 @@ import Link from "next/link";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
+import ProductImageCarousel from "../components/ProductImageCarousel";
 import HomepageGalleryCarousel from "../components/HomepageGalleryCarousel";
 import products from "../data/products";
 
 export default function Home() {
   const featured = products.slice(0, 3);
+  
+  const awardsPhotos = [
+    "/boats/award 1.jpeg",
+    "/boats/award 2.jpeg",
+    "/boats/award 3.jpeg",
+    "/boats/award 4.jpeg",
+    "/boats/award 5.jpeg",
+  ];
 
   return (
     <>
@@ -47,6 +56,19 @@ export default function Home() {
         </div>
 
         <HomepageGalleryCarousel />
+      </section>
+
+      {/* ── Awards ────────────────────────── */}
+      <section className="highlightProducts" style={{ paddingTop: 80, paddingBottom: 100 }}>
+        <div className="sectionHeader">
+          <p className="label">Recognition</p>
+          <h2>Awards & Recognition</h2>
+          <p>Celebrating excellence in manufacturing and design.</p>
+        </div>
+        
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 24px" }}>
+            <ProductImageCarousel images={awardsPhotos} title="Awards" interval={4000} />
+        </div>
       </section>
 
       {/* ── CTA Banner ────────────────────── */}

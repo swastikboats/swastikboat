@@ -955,13 +955,19 @@ a {
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 40px;
+  background: var(--color-light);
+}
+
+@media (max-width: 768px) {
+  .productImageCarouselWrapper {
+    height: 300px;
+  }
 }
 
 .productImageCarousel {
   position: relative;
   width: 100%;
   height: 100%;
-  background: var(--color-light);
 }
 
 .productCarouselImage {
@@ -970,6 +976,37 @@ a {
   object-fit: contain !important;
   object-position: center !important;
   display: block !important;
+}
+
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.carouselArrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prevArrow {
+  left: 10px;
+}
+
+.nextArrow {
+  right: 10px;
 }
 
 .productImageIndicators {
