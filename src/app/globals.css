@@ -962,6 +962,10 @@ a {
   .productImageCarouselWrapper {
     height: 300px;
   }
+  
+  .awardsCarouselContainer .productImageCarouselWrapper {
+    height: 480px !important;
+  }
 }
 
 .productImageCarousel {
@@ -971,11 +975,12 @@ a {
 }
 
 .productCarouselImage {
-  width: 100% !important;
-  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  inset: 0;
+  margin: auto;
   object-fit: contain !important;
-  object-position: center !important;
-  display: block !important;
+  display: block;
 }
 
 .carouselArrow {

@@ -57,15 +57,15 @@ export default function ProductImageCarousel({ images, title, interval = 5000 })
           <img
             key={i}
             src={src}
-            alt={`${title} - View ${i + 1}`}
+            alt={`${title} - View ${i + i}`}
             className="productCarouselImage"
             style={{
               opacity: i === index ? 1 : 0,
               position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
+              inset: 0,
+              margin: "auto",
+              maxWidth: "100%",
+              maxHeight: "100%",
               objectFit: "contain",
               transition: "opacity 0.6s ease-in-out",
               zIndex: i === index ? 1 : 0,
