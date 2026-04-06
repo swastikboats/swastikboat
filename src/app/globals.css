@@ -965,6 +965,7 @@ a {
   
   .awardsCarouselContainer .productImageCarouselWrapper {
     height: 480px !important;
+    background: #FFFFFF !important;
   }
 }
 
@@ -972,6 +973,7 @@ a {
   position: relative;
   width: 100%;
   height: 100%;
+  background: #FFFFFF;
 }
 
 .productCarouselImage {
