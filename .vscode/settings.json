@@ -1,3 +1,7 @@
 {
-  "css.lint.unknownAtRules": "ignore"
+    "agq.pinnedModels": [
+        "Gemini 3.1"
+    ],
+    "agq.showPromptCredits": true,
+    "css.lint.unknownAtRules": "ignore"
 }

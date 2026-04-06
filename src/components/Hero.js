@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 
 const images = [
-  "/placeholder.jpg",
-  "/placeholder.jpg",
-  "/placeholder.jpg",
+  "/boats/Homepage 1 .jpg",
+  "/boats/homepage 2 .jpg",
+  "/boats/homepage 3.jpg",
 ];
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -26,7 +26,7 @@ export default function Hero() {
           key={i}
           className="heroBg"
           style={{
-            backgroundImage: `url(${src})`,
+            backgroundImage: `url("${src}")`,
             opacity: i === index ? 1 : 0,
           }}
         />
@@ -37,7 +37,7 @@ export default function Hero() {
         <h1>Precision Boats Built&nbsp;for Performance</h1>
         <p>
           High-performance rowing boats engineered for speed,
-          durability and precision craftsmanship since 1998.
+          durability and precision craftsmanship since 1995.
         </p>
       </div>
 

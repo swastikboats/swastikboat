@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
-  { id: 1, src: "/boats/single kudrat ali.jpg", alt: "Single Scull" },
+  { id: 1, src: "/boats/single scull kudrat ali.jpg", alt: "Single Scull" },
   { id: 2, src: "/boats/double scull.jpg", alt: "Double Scull" },
-  { id: 3, src: "/boats/four coxless heavy.jpg", alt: "Four Coxless" },
+  { id: 3, src: "/boats/four heavy.jpg", alt: "Four Heavyweight" },
   { id: 4, src: "/boats/group photo for start.jpg", alt: "Group Training" },
   { id: 5, src: "/boats/heavyweight double scull.jpg", alt: "Heavyweight Double Scull" },
-  { id: 6, src: "/boats/double scull close.jpg", alt: "Double Scull Close Up" },
+  { id: 6, src: "/boats/double scull 3.jpg", alt: "Double Scull Close Up" },
   { id: 7, src: "/boats/single scull heavyweight .jpg", alt: "Single Scull Heavyweight" },
   { id: 8, src: "/boats/group.jpg", alt: "Group Photo" },
 ];
@@ -16,12 +16,18 @@ const galleryImages = [
 export default function HomepageGalleryCarousel() {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 2000);
-    return () => clearInterval(interval);
+  const goNext = useCallback(() => {
+    setIndex((prev) => (prev + 1) % galleryImages.length);
   }, []);
+
+  const goPrev = useCallback(() => {
+    setIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(goNext, 2000);
+    return () => clearInterval(interval);
+  }, [goNext]);
 
   return (
     <div className="homepageGalleryCarouselWrapper">
@@ -44,6 +50,14 @@ export default function HomepageGalleryCarousel() {
           />
         ))}
       </div>
+
+      {/* Navigation Arrows */}
+      <button className="carouselArrow carouselArrowLeft" onClick={goPrev} aria-label="Previous image">
+        &#8249;
+      </button>
+      <button className="carouselArrow carouselArrowRight" onClick={goNext} aria-label="Next image">
+        &#8250;
+      </button>
 
       {/* Indicators */}
       <div className="galleryCarouselIndicators">

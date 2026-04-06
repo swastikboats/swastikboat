@@ -1,17 +1,17 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Header from "../../components/Header";
 
-export const metadata = {
-  title: "Gallery — Swastik Boats",
-  description: "View our collection of precision-crafted rowing boats",
-};
-
 export default function GalleryPage() {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
   const galleryItems = [
     {
       id: 1,
-      image: "/boats/single kudrat ali.jpg",
-      title: "Single Scull",
-      description: "Elite single-rower boat designed for competitive racing.",
+      image: "/boats/group start.jpg",
+      title: "Group Start",
+      description: "Boats lined up for a competitive start.",
     },
     {
       id: 2,
@@ -21,14 +21,14 @@ export default function GalleryPage() {
     },
     {
       id: 3,
-      image: "/boats/double scull close.jpg",
+      image: "/boats/Double 1.jpg",
       title: "Double Scull Close-Up",
       description: "Detailed view of our precision hull construction.",
     },
     {
       id: 4,
-      image: "/boats/four coxless heavy.jpg",
-      title: "Four Coxless Heavy",
+      image: "/boats/four heavy.jpg",
+      title: "Four Heavyweight",
       description: "Four-person boat built for powerful, synchronized rowing.",
     },
     {
@@ -51,137 +51,114 @@ export default function GalleryPage() {
     },
     {
       id: 8,
-      image: "/boats/single scull heavyweight .jpg",
-      title: "Single Scull Heavyweight",
-      description: "Single scull engineered for maximum performance.",
-    },
-    {
-      id: 9,
       image: "/boats/single scull heavyweight 2.jpg",
       title: "Heavyweight Competition",
       description: "Race-ready single scull in action.",
     },
     {
-      id: 10,
-      image: "/boats/double scull 3.jpg",
-      title: "Double Scull Standard",
-      description: "Classic two-person boat design.",
-    },
-    {
-      id: 11,
+      id: 9,
       image: "/boats/double scull heavy 3.jpg",
       title: "Heavy Double Scull Variant",
       description: "Specialized heavy-duty double scull model.",
     },
     {
-      id: 12,
-      image: "/boats/single kudrat 2.jpg",
-      title: "Single Scull Training",
-      description: "Training boat for developing rowers.",
+      id: 10,
+      image: "/boats/single.jpg",
+      title: "Single Scull LW",
+      description: "Light weight boat for developing rowers.",
     },
     {
-      id: 13,
-      image: "/boats/single kudrat 3.jpg",
+      id: 11,
+      image: "/boats/single 2.jpg",
       title: "Single Scull Variant",
       description: "Alternative single scull configuration.",
     },
     {
+      id: 12,
+      image: "/boats/single scull rowing boat light weight model 34.jpg",
+      title: "Lightweight Model 34",
+      description: "Premium lightweight single scull model.",
+    },
+    {
+      id: 13,
+      image: "/boats/double scull lightweight jpg.jpg",
+      title: "Lightweight Double Scull",
+      description: "Lightweight double scull for racing.",
+    },
+    {
       id: 14,
-      image: "/boats/single kudrat 4.jpg",
-      title: "Competition Ready",
-      description: "Single scull prepared for championship racing.",
+      image: "/boats/double 2.jpg",
+      title: "Double Scull LW",
+      description: "Light weight Double scull viewed from water level.",
     },
     {
       id: 15,
-      image: "/boats/single scull kudrat ali.jpg",
-      title: "Professional Single Scull",
-      description: "Premium single scull for elite athletes.",
+      image: "/boats/four heavyweight .jpeg",
+      title: "Four Heavyweight",
+      description: "Four-person heavyweight in the water.",
     },
     {
       id: 16,
-      image: "/boats/coxless pair 1.jpg",
-      title: "Coxless Pair",
-      description: "Two-rower boat with synchronized rowing design.",
+      image: "/boats/single scull swastik traning balance boat 1.jpg",
+      title: "Swastik Training Balance Boat",
+      description: "Balance training boat for developing technique.",
     },
     {
       id: 17,
-      image: "/boats/coxless pair.jpg",
-      title: "Coxless Pair Alternative View",
-      description: "Different angle of our coxless pair design.",
-    },
-    {
-      id: 18,
-      image: "/boats/double scull kids.jpg",
-      title: "Junior Double Scull",
-      description: "Scaled boat for young, developing athletes.",
-    },
-    {
-      id: 19,
-      image: "/boats/heavy double scull close up.jpg",
-      title: "Heavy Double Scull Detail",
-      description: "Close-up of heavy construction quality.",
-    },
-    {
-      id: 20,
       image: "/boats/start group best.jpg",
       title: "Race Start",
       description: "Teams at the starting line of a major regatta.",
     },
     {
-      id: 21,
+      id: 18,
       image: "/boats/single double group.jpg",
       title: "Mixed Fleet",
       description: "Single and double sculls training together.",
     },
     {
-      id: 22,
-      image: "/boats/wing riger of this pic.jpg",
-      title: "Wing Rigger Detail",
-      description: "Close-up of wing rigger construction.",
+      id: 19,
+      image: "/boats/Rajesh Lunawat Founder and Creator of the Legacy.jpg",
+      title: "Rajesh Lunawat — Founder",
+      description: "Founder and creator of the Swastik Boats legacy.",
     },
     {
-      id: 23,
-      image: "/boats/kudrat ali best .jpg",
-      title: "Premium Build",
-      description: "Our finest boat construction quality.",
-    },
-    {
-      id: 24,
-      image: "/boats/IMG_4030.jpg",
-      title: "Workshop Scene",
-      description: "Behind-the-scenes boat manufacturing.",
-    },
-    {
-      id: 25,
-      image: "/boats/IMG_4138.jpg",
-      title: "Craftmanship",
-      description: "Detailed manufacturing process.",
-    },
-    {
-      id: 26,
-      image: "/boats/IMG_4142.jpg",
-      title: "Quality Control",
-      description: "Rigorous testing procedures.",
-    },
-    {
-      id: 27,
-      image: "/boats/IMG_4150.jpg",
-      title: "Team Building",
-      description: "Expert craftsmen at work.",
-    },
-    {
-      id: 28,
-      image: "/boats/IMG_4151.jpg",
-      title: "Production Line",
-      description: "State-of-the-art manufacturing facility.",
-    },
-    {
-      id: 29,
-      image: "/boats/IMG_4152.jpg",
-      title: "Final Assembly",
-      description: "Complete boat assembly process.",
+      id: 20,
+      image: "/boats/Single jaguar training_.jpg",
+      title: "Jaguar Training Scull",
+      description: "Training single scull – Jaguar model.",
     },
   ];
+
+  const handleClose = useCallback(() => {
+    setSelectedIndex(null);
+  }, []);
+
+  const goNext = useCallback(() => {
+    setSelectedIndex((prev) => (prev + 1) % galleryItems.length);
+  }, [galleryItems.length]);
+
+  const goPrev = useCallback(() => {
+    setSelectedIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+  }, [galleryItems.length]);
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (selectedIndex === null) return;
+      if (e.key === "Escape") handleClose();
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    if (selectedIndex !== null) {
+      document.addEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [selectedIndex, handleClose, goNext, goPrev]);
+
+  const selectedItem = selectedIndex !== null ? galleryItems[selectedIndex] : null;
 
   return (
     <>
@@ -203,6 +180,7 @@ export default function GalleryPage() {
             <div
               key={item.id}
               className={`galleryCard ${idx === 0 ? "featured" : ""}`}
+              onClick={() => setSelectedIndex(idx)}
             >
               <div className="galleryImageWrapper">
                 <img src={item.image} alt={item.title} />
@@ -217,6 +195,62 @@ export default function GalleryPage() {
           ))}
         </div>
       </section>
+
+      {/* ── Lightbox Modal with Navigation ────────────────── */}
+      {selectedItem && (
+        <div className="lightboxOverlay" onClick={handleClose}>
+          <button
+            className="lightboxClose"
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClose();
+            }}
+            aria-label="Close lightbox"
+          >
+            ✕
+          </button>
+
+          {/* Previous Arrow */}
+          <button
+            className="lightboxArrow lightboxArrowLeft"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            aria-label="Previous image"
+          >
+            &#8249;
+          </button>
+
+          <div
+            className="lightboxContent"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedItem.image}
+              alt={selectedItem.title}
+              className="lightboxImage"
+            />
+            <div className="lightboxCaption">
+              <h3>{selectedItem.title}</h3>
+              <p>{selectedItem.description}</p>
+              <span className="lightboxCounter">{selectedIndex + 1} / {galleryItems.length}</span>
+            </div>
+          </div>
+
+          {/* Next Arrow */}
+          <button
+            className="lightboxArrow lightboxArrowRight"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            aria-label="Next image"
+          >
+            &#8250;
+          </button>
+        </div>
+      )}
 
       {/* ── CTA Banner ────────────────────── */}
       <section className="ctaBanner">

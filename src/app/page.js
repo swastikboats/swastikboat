@@ -2,49 +2,25 @@ import Link from "next/link";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
-import Counter from "../components/Counter";
+import ProductImageCarousel from "../components/ProductImageCarousel";
 import HomepageGalleryCarousel from "../components/HomepageGalleryCarousel";
 import products from "../data/products";
 
 export default function Home() {
   const featured = products.slice(0, 3);
+  
+  const awardsPhotos = [
+    "/boats/award 1.jpeg",
+    "/boats/award 2.jpeg",
+    "/boats/award 3.jpeg",
+    "/boats/award 4.jpeg",
+    "/boats/award 5.jpeg",
+  ];
 
   return (
     <>
       <Header />
       <Hero />
-
-      {/* ── About Section ─────────────────────── */}
-      <section className="aboutSection">
-        <div className="aboutContainer">
-          <div className="aboutImage">
-            <img src="/placeholder.jpg" alt="Swastik Boats Craftsmanship" />
-          </div>
-          <div className="aboutContent">
-            <span className="hero-label">Our Story</span>
-            <h2>About Us</h2>
-            <p>
-              Swastik Boats has been at the forefront of precision boat manufacturing for over two decades. 
-              Our commitment to excellence, innovation, and quality craftsmanship has made us the trusted choice 
-              for competitive rowers, rowing clubs, and athletic organizations worldwide.
-            </p>
-            <p>
-              From humble beginnings as a small workshop to becoming an industry leader, we've maintained 
-              our core values: precision engineering, sustainable practices, and unwavering dedication to performance. 
-              Every boat we build carries our legacy of expertise and passion for rowing.
-            </p>
-            
-            <div className="aboutStats">
-              <Counter finalNumber={25} label="Years of Excellence" />
-              <Counter finalNumber={500} label="Boats Delivered" />
-            </div>
-            
-            <div className="aboutCta">
-              <Link href="/gallery" className="cta-outline">View Our Work</Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Products ──────────────────────── */}
       <section className="highlightProducts">
@@ -80,6 +56,19 @@ export default function Home() {
         </div>
 
         <HomepageGalleryCarousel />
+      </section>
+
+      {/* ── Awards ────────────────────────── */}
+      <section className="highlightProducts" style={{ paddingTop: 80, paddingBottom: 100 }}>
+        <div className="sectionHeader">
+          <p className="label">Recognition</p>
+          <h2>Awards & Recognition</h2>
+          <p>Celebrating excellence in manufacturing and design.</p>
+        </div>
+        
+        <div className="awardsCarouselContainer" style={{ maxWidth: 1000, margin: "0 auto", padding: "0 24px" }}>
+            <ProductImageCarousel images={awardsPhotos} title="Awards" interval={4000} />
+        </div>
       </section>
 
       {/* ── CTA Banner ────────────────────── */}

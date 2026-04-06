@@ -21,38 +21,30 @@ export default function Header({ variant = "transparent" }) {
   }, []);
 
   const isDark = variant === "dark";
-  const headerClass = isDark 
-    ? "header headerDark" 
-    : isScrolled 
+  const headerClass = isDark
+    ? "header headerDark"
+    : isScrolled
       ? "header headerScrolled"
       : "header";
 
   return (
     <>
       <header className={headerClass}>
-        <Link href="/" className="logo">Swastik Boats</Link>
+        <Link href="/" className="logo">
+          <img src="/logo.png" alt="Swastik Boats" className="logoImg" />
+          <span>Swastik Boats</span>
+        </Link>
 
         <nav className="nav">
           <Link href="/">Home</Link>
           <Link href="/products">Products</Link>
+          <Link href="/about">About Us</Link>
           <Link href="/gallery">Gallery</Link>
           <Link href="/contact">Contact</Link>
         </nav>
 
-        <div className="socials">
-          <a href="#" title="Instagram">
-            IG
-          </a>
-          <a href="#" title="Facebook">
-            FB
-          </a>
-          <a href="#" title="Twitter">
-            TW
-          </a>
-        </div>
-
         {/* Hamburger Menu Button */}
-        <button 
+        <button
           className="hamburger"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -69,6 +61,7 @@ export default function Header({ variant = "transparent" }) {
           <nav className="mobileMenu">
             <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
             <Link href="/products" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
             <Link href="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </nav>

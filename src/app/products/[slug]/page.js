@@ -3,15 +3,18 @@ import { notFound } from "next/navigation";
 import Header from "../../../components/Header";
 import ProductCard from "../../../components/ProductCard";
 import ProductImageCarousel from "../../../components/ProductImageCarousel";
-import products from "../../../data/products";
+import RequestQuoteButton from "../../../components/RequestQuoteButton";
+import products, { formatBoatClass } from "../../../data/products";
+
+const boatProducts = products.filter((p) => !p.isSparePart);
 
 export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+  return boatProducts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = boatProducts.find((p) => p.slug === slug);
   if (!product) return {};
   return {
     title: `${product.title} — Swastik Boats`,
@@ -21,11 +24,11 @@ export async function generateMetadata({ params }) {
 
 export default async function ProductDetail({ params }) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = boatProducts.find((p) => p.slug === slug);
 
   if (!product) notFound();
 
-  const related = products.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = boatProducts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <>
@@ -36,7 +39,7 @@ export default async function ProductDetail({ params }) {
         <div className="breadcrumb">
           <Link href="/">Home</Link>
           <span>/</span>
-          <Link href="/products">Boats</Link>
+          <Link href="/products">Products</Link>
           <span>/</span>
           <span className="current">{product.title}</span>
         </div>
@@ -46,6 +49,7 @@ export default async function ProductDetail({ params }) {
             <ProductImageCarousel 
               images={product.images || [product.image]} 
               title={product.title}
+              interval={5000}
             />
           </div>
 
@@ -56,7 +60,8 @@ export default async function ProductDetail({ params }) {
             <p className="detailDesc">{product.description}</p>
 
             <div className="detailCta">
-              <Link href="/contact" className="cta">Request Quote</Link>
+              <RequestQuoteButton productTitle={product.title} />
+              <a href="/boats/specifications.pdf" download className="cta" style={{ background: "var(--color-secondary)", display: "inline-block" }}>Download All Boats Specification Sheet (PDF)</a>
             </div>
           </div>
         </div>
@@ -67,16 +72,71 @@ export default async function ProductDetail({ params }) {
         <div className="detailContentInner">
           <div className="specsBlock">
             <h2>Specifications</h2>
-            <table className="specsTable">
-              <tbody>
-                {Object.entries(product.specs).map(([key, value]) => (
-                  <tr key={key}>
-                    <td>{key}</td>
-                    <td>{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            {product.variants ? (
+              // Display variant-based specs
+              <div className="variantsSpecsLayout">
+                {/* Main Specs */}
+                <div className="mainSpecsBox">
+                  <h3>Core Specifications</h3>
+                  <div className="specsGrid">
+                    {Object.entries(product.specs).map(([key, value]) => (
+                      <div key={key} className="specItem">
+                        <span className="specLabel">{key}:</span>
+                        <span className="specValue">
+                          {key === "class" ? formatBoatClass(value) : value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Variants with Tables */}
+                <div className="variantsTablesSection">
+                  <h3>Available Variants</h3>
+                  <div className="variantsTableGrid">
+                    {product.variants.map((variant, index) => (
+                      <div key={index} className="variantTableWrapper">
+                        <h4>{variant.name}</h4>
+                        <table className="variantSpecsTable">
+                          <tbody>
+                            <tr>
+                              <td className="specKey">Average Crew Weight</td>
+                              <td>{variant.avgCrewWeight}</td>
+                            </tr>
+                            <tr>
+                              <td className="specKey">Crew Weight Range</td>
+                              <td>{variant.crewWeightRange}</td>
+                            </tr>
+                            <tr>
+                              <td className="specKey">Boat Length</td>
+                              <td>{variant.lengths.length}</td>
+                            </tr>
+                            {variant.specs && Object.entries(variant.specs).map(([key, value]) => (
+                              <tr key={key}>
+                                <td className="specKey">{key.charAt(0).toUpperCase() + key.slice(1)}</td>
+                                <td>{value}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              // Display regular specs for non-variant products
+              <table className="specsTable">
+                <tbody>
+                  {Object.entries(product.specs).map(([key, value]) => (
+                    <tr key={key}>
+                      <td>{key}</td>
+                      <td>{key === "class" ? formatBoatClass(value) : value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
 
           <div className="featuresBlock">

@@ -1,10 +1,45 @@
 import nodemailer from "nodemailer";
+import products from "../../../data/products";
+
+// Simple in-memory rate limiter
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 3;
 
 export async function POST(request) {
   try {
+    // Implement rate limiting
+    const ip = request.headers.get("x-forwarded-for") || "unknown_ip";
+    const currentTime = Date.now();
+    
+    if (rateLimitMap.has(ip)) {
+      const data = rateLimitMap.get(ip);
+      if (currentTime - data.startTime < RATE_LIMIT_WINDOW_MS) {
+        if (data.count >= MAX_REQUESTS_PER_WINDOW) {
+          return Response.json(
+            { error: "Too many requests. Please try again later." },
+            { status: 429 }
+          );
+        }
+        data.count++;
+      } else {
+        rateLimitMap.set(ip, { count: 1, startTime: currentTime });
+      }
+    } else {
+      rateLimitMap.set(ip, { count: 1, startTime: currentTime });
+    }
+
+    // Clean up old entries occasionally to prevent memory leaks
+    if (Math.random() < 0.1) {
+       for (const [key, value] of rateLimitMap.entries()) {
+          if (currentTime - value.startTime > RATE_LIMIT_WINDOW_MS) {
+             rateLimitMap.delete(key);
+          }
+       }
+    }
+
     const body = await request.json();
-    const { name, email, countryCode, mobileNumber, boatInterest, message } =
-      body;
+    const { name, email, countryCode, mobileNumber, boatInterest, message } = body;
 
     // Validate required fields
     if (!name || !email || !boatInterest) {
@@ -13,6 +48,28 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    // Server-side validation rules
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return Response.json({ error: "Invalid email format" }, { status: 400 });
+    }
+
+    const hasHtmlTags = (str) => /<[^>]*>/g.test(str);
+    
+    if (name.length > 100 || hasHtmlTags(name)) {
+      return Response.json({ error: "Invalid name format" }, { status: 400 });
+    }
+
+    if (message && (message.length > 2000 || hasHtmlTags(message))) {
+      return Response.json({ error: "Invalid message format or length" }, { status: 400 });
+    }
+
+    const validBoatTitles = products.map((p) => p.title);
+    if (boatInterest !== "General Inquiry" && !validBoatTitles.includes(boatInterest)) {
+      return Response.json({ error: "Invalid product selected" }, { status: 400 });
+    }
+
 
     // Configure your email service here
     // For Gmail: use App Passwords (not regular password)
