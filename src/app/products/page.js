@@ -70,6 +70,7 @@ export default function ProductsPage() {
               title={p.title}
               subtitle={p.subtitle}
               image={p.image}
+              noImage={!!p.noImage}
               isSparePart={!!p.isSparePart}
               onSparePartClick={(item) => setSparePartPopup(item)}
             />
