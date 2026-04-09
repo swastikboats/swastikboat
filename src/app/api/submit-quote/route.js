@@ -42,7 +42,7 @@ export async function POST(request) {
     const { name, email, countryCode, mobileNumber, boatInterest, message } = body;
 
     // Validate required fields
-    if (!name || !email || !boatInterest) {
+    if (!name || !email) {
       return Response.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -66,7 +66,17 @@ export async function POST(request) {
     }
 
     const validBoatTitles = products.map((p) => p.title);
-    if (boatInterest !== "General Inquiry" && !validBoatTitles.includes(boatInterest)) {
+    const validContactOptions = [
+      "Sculling boats",
+      "Carbon racing shell",
+      "Professional rowing boat",
+      "Double scull",
+      "Single/Double scull trainer boat",
+      "Juniors training boats",
+      "Other",
+    ];
+    const allValidOptions = [...validBoatTitles, ...validContactOptions, "General Inquiry"];
+    if (boatInterest && !allValidOptions.includes(boatInterest)) {
       return Response.json({ error: "Invalid product selected" }, { status: 400 });
     }
 
