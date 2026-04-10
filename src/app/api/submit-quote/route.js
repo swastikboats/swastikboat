@@ -93,7 +93,7 @@ export async function POST(request) {
     });
 
     // Email to admin/owner
-    const adminEmail = process.env.ADMIN_EMAIL || "contact@sagarboats.com";
+    const adminEmail = process.env.ADMIN_EMAIL || "swastikboats@gmail.com";
     const userPhone = mobileNumber
       ? `${countryCode} ${mobileNumber}`
       : "Not provided";
@@ -160,7 +160,7 @@ export async function POST(request) {
           </div>
           <p style="color: #64748B; font-size: 14px; line-height: 1.6;">
             If you have any urgent questions, feel free to reach out to us at 
-            <a href="mailto:contact@sagarboats.com" style="color: #0ea5e9;">contact@sagarboats.com</a>
+            <a href="mailto:swastikboats@gmail.com" style="color: #0ea5e9;">swastikboats@gmail.com</a>
           </p>
           <p style="color: #64748B; margin-top: 30px; font-size: 12px; border-top: 1px solid #E2E8F0; padding-top: 15px;">
             Best regards,<br/>
