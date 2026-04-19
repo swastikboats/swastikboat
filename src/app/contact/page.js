@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Header from "../../components/Header";
 
 export default function ContactPage() {
@@ -244,7 +245,11 @@ export default function ContactPage() {
       </section>
 
       {/* ── Footer ────────────────────────── */}
-      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
+      <footer className="footer">
+        © 2026 Swastik Boats. All rights reserved.
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/site-notice">Site Notice</Link>
+      </footer>
     </>
   );
 }
