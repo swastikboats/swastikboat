@@ -115,7 +115,11 @@ export default function ProductsPage() {
         <Link href="/contact" className="cta">Get in Touch</Link>
       </section>
 
-      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
+      <footer className="footer">
+        © 2026 Swastik Boats. All rights reserved.
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/site-notice">Site Notice</Link>
+      </footer>
     </>
   );
 }
