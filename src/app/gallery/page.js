@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import Header from "../../components/Header";
 
 export default function GalleryPage() {
@@ -259,7 +260,11 @@ export default function GalleryPage() {
         <a href="/contact" className="cta">Contact Us</a>
       </section>
 
-      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
+      <footer className="footer">
+        © 2026 Swastik Boats. All rights reserved.
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/site-notice">Site Notice</Link>
+      </footer>
     </>
   );
 }

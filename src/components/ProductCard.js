@@ -8,6 +8,7 @@ export default function ProductCard({
   slug,
   image = "/placeholder.jpg",
   isSparePart = false,
+  noImage = false,
   onSparePartClick,
 }) {
   if (isSparePart) {
@@ -29,6 +30,24 @@ export default function ProductCard({
     );
   }
 
+  if (noImage) {
+    return (
+      <Link href={`/products/${slug}`} className="productCardLink">
+        <div className="productCard productCardNoImage">
+          <div className="productCardPlaceholder">
+            <span className="placeholderLine" />
+            <span className="placeholderLine short" />
+          </div>
+          <div className="productOverlay productOverlayNoImage">
+            <h3>{title}</h3>
+            <p>{subtitle || "High performance racing shell"}</p>
+            <span className="cardArrow">View Details →</span>
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
   return (
     <Link href={`/products/${slug}`} className="productCardLink">
       <div className="productCard">
@@ -41,4 +60,4 @@ export default function ProductCard({
       </div>
     </Link>
   );
-}
+}

@@ -45,13 +45,15 @@ export default async function ProductDetail({ params }) {
         </div>
 
         <div className="detailHeroInner">
-          <div className="detailHeroImage">
-            <ProductImageCarousel 
-              images={product.images || [product.image]} 
-              title={product.title}
-              interval={5000}
-            />
-          </div>
+          {!product.noImage && (
+            <div className="detailHeroImage">
+              <ProductImageCarousel 
+                images={product.images || [product.image]} 
+                title={product.title}
+                interval={5000}
+              />
+            </div>
+          )}
 
           <div className="detailHeroInfo">
             <span className="hero-label">{product.category}</span>
@@ -165,6 +167,7 @@ export default async function ProductDetail({ params }) {
               title={p.title}
               subtitle={p.subtitle}
               image={p.image}
+              noImage={!!p.noImage}
             />
           ))}
         </div>
@@ -177,7 +180,11 @@ export default async function ProductDetail({ params }) {
         <Link href="/contact" className="cta">Get in Touch</Link>
       </section>
 
-      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
+      <footer className="footer">
+        © 2026 Swastik Boats. All rights reserved.
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/site-notice">Site Notice</Link>
+      </footer>
     </>
   );
 }

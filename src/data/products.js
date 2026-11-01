@@ -293,10 +293,7 @@ const products = [
     title: "Eights",
     subtitle: "Eight-person crew boat for elite competitive rowing",
     category: "Boats",
-    image: "/boats/eightboat.jpg",
-    images: [
-      "/boats/eightboat.jpg",
-    ],
+    noImage: true,
     description:
       "The Eights (8+) is the premier eight-rower crew boat with coxswain, designed for elite athletes and rowing institutions competing at the highest international level. Available in Lightweight (LW) and Heavyweight (HW) variants, each engineered for maximum speed, power transfer, and crew synchronization. Built with advanced composite materials and fine hull design.",
     specs: {

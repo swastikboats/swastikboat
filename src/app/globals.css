@@ -645,6 +645,43 @@ a {
   gap: 10px;
 }
 
+/* ── No-Image Product Card ──────────────────── */
+
+.productCardNoImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 380px;
+}
+
+.productCardPlaceholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+}
+
+.placeholderLine {
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1px;
+}
+
+.placeholderLine.short {
+  width: 35%;
+}
+
+.productOverlayNoImage {
+  position: relative;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+  transform: translateY(0);
+}
+
 /* ====================================================
    GALLERY (homepage)
    ==================================================== */
@@ -788,11 +825,27 @@ a {
    ==================================================== */
 
 .footer {
-  background: var(--color-primary) !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  background: var(--color-ocean) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   text-align: center;
   padding: 32px;
   font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Footer Links */
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 /* ====================================================
@@ -962,7 +1015,7 @@ a {
   .productImageCarouselWrapper {
     height: 300px;
   }
-  
+
   .awardsCarouselContainer .productImageCarouselWrapper {
     height: 480px !important;
     background: #FFFFFF !important;
@@ -2543,11 +2596,12 @@ a {
 
 /* ── Footer ─────────────────────────────────── */
 .footer {
-  background: var(--color-primary);
-  color: rgba(255, 255, 255, 0.5);
+  background: var(--color-ocean);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   padding: 32px;
   font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* ── Dark Header (inner pages) ───────────────── */

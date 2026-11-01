@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Header from "../../components/Header";
 
 export default function ContactPage() {
@@ -9,7 +10,7 @@ export default function ContactPage() {
     email: "",
     countryCode: "+1",
     mobileNumber: "",
-    boatInterest: "Elite Scull Boat",
+    boatInterest: "Sculling boats",
     message: "",
   });
 
@@ -29,12 +30,13 @@ export default function ContactPage() {
   ];
 
   const boatOptions = [
-    "Elite Scull Boat",
-    "Carbon Racing Shell",
-    "Professional Rowing Boat",
-    "Coastal Double Scull",
-    "Quad Scull Trainer",
-    "Junior Training Scull",
+    "Sculling boats",
+    "Carbon racing shell",
+    "Professional rowing boat",
+    "Double scull",
+    "Single/Double scull trainer boat",
+    "Juniors training boats",
+    "Other",
   ];
 
   const handleChange = (e) => {
@@ -63,7 +65,7 @@ export default function ContactPage() {
           email: "",
           countryCode: "+1",
           mobileNumber: "",
-          boatInterest: "Elite Scull Boat",
+          boatInterest: "Sculling boats",
           message: "",
         });
         setTimeout(() => setSubmitted(false), 3000);
@@ -198,13 +200,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="formGroup">
-                  <label htmlFor="boatInterest">Which Boat Interests You? *</label>
+                  <label htmlFor="boatInterest">Which Boat Interests You?</label>
                   <select
                     id="boatInterest"
                     name="boatInterest"
                     value={formData.boatInterest}
                     onChange={handleChange}
-                    required
                   >
                     {boatOptions.map((boat) => (
                       <option key={boat} value={boat}>
@@ -244,7 +245,11 @@ export default function ContactPage() {
       </section>
 
       {/* ── Footer ────────────────────────── */}
-      <footer className="footer">© 2026 Swastik Boats. All rights reserved.</footer>
+      <footer className="footer">
+        © 2026 Swastik Boats. All rights reserved.
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/site-notice">Site Notice</Link>
+      </footer>
     </>
   );
 }
