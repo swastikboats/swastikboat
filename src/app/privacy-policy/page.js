@@ -1,11 +1,18 @@
 import Link from "next/link";
 import Header from "../../components/Header";
+import { createBreadcrumbData, createPageMetadata, serializeJsonLd } from "../seo";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy | Swastik Boats",
   description:
     "How Swastik Fibchem Industry handles information submitted through Swastik Boats enquiry forms.",
-};
+  path: "/privacy-policy",
+});
+
+const breadcrumbData = createBreadcrumbData([
+  { name: "Home", path: "/" },
+  { name: "Privacy Policy", path: "/privacy-policy" },
+]);
 
 const sectionHeadingStyle = {
   fontSize: "24px",
@@ -18,6 +25,10 @@ const sectionStyle = { marginBottom: "40px" };
 export default function PrivacyPolicy() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbData) }}
+      />
       <Header variant="dark" />
       <section className="pageHero" style={{ paddingTop: "160px", paddingBottom: "60px" }}>
         <p className="hero-label">Privacy</p>

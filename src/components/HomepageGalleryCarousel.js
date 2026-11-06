@@ -3,14 +3,14 @@
 import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
-  { id: 1, src: "/boats/single scull kudrat ali.jpg", alt: "Single Scull" },
-  { id: 2, src: "/boats/double scull.jpg", alt: "Double Scull" },
-  { id: 3, src: "/boats/four heavy.jpg", alt: "Four Heavyweight" },
-  { id: 4, src: "/boats/group photo for start.jpg", alt: "Group Training" },
-  { id: 5, src: "/boats/heavyweight double scull.jpg", alt: "Heavyweight Double Scull" },
-  { id: 6, src: "/boats/double scull 3.jpg", alt: "Double Scull Close Up" },
-  { id: 7, src: "/boats/single scull heavyweight .jpg", alt: "Single Scull Heavyweight" },
-  { id: 8, src: "/boats/group.jpg", alt: "Group Photo" },
+  { id: 1, src: "/boats/single scull kudrat ali.jpg", alt: "Single scull rowing boat" },
+  { id: 2, src: "/boats/double scull.jpg", alt: "Double scull rowing boat" },
+  { id: 3, src: "/boats/four heavy.jpg", alt: "Heavyweight four-person rowing boat" },
+  { id: 4, src: "/boats/group photo for start.jpg", alt: "Rowing teams preparing for a competitive event" },
+  { id: 5, src: "/boats/heavyweight double scull.jpg", alt: "Heavyweight double scull" },
+  { id: 6, src: "/boats/double scull 3.jpg", alt: "Double scull rowing boat" },
+  { id: 7, src: "/boats/single scull heavyweight .jpg", alt: "Heavyweight single scull" },
+  { id: 8, src: "/boats/group.jpg", alt: "Multiple boats during team practice on open water" },
 ];
 
 export default function HomepageGalleryCarousel() {

@@ -1,10 +1,28 @@
 import Link from "next/link";
 import Header from "../../components/Header";
 import Counter from "../../components/Counter";
+import { createBreadcrumbData, createPageMetadata, serializeJsonLd } from "../seo";
+
+export const metadata = createPageMetadata({
+  title: "About Swastik Boats | Indian Rowing Shell Manufacturer Since 1995",
+  description:
+    "Learn about Swastik Fibchem Industry, its founder, rowing boat range, and manufacturing history in India since 1995.",
+  path: "/about",
+  image: "/boats/Rajesh Lunawat Founder and Creator of the Legacy.jpg",
+});
+
+const breadcrumbData = createBreadcrumbData([
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+]);
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbData) }}
+      />
       <Header variant="dark" />
 
       {/* ── Page Hero ── */}

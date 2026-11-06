@@ -5,6 +5,12 @@ import Link from "next/link";
 import Header from "../../components/Header";
 import ProductCard from "../../components/ProductCard";
 import products from "../../data/products";
+import { createBreadcrumbData, serializeJsonLd } from "../seo";
+
+const breadcrumbData = createBreadcrumbData([
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/products" },
+]);
 
 export default function ProductsPage() {
   const [active, setActive] = useState("All");
@@ -35,6 +41,10 @@ export default function ProductsPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbData) }}
+      />
       <Header variant="dark" />
 
       {/* ── Page Hero ─────────────────────── */}

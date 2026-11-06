@@ -31,7 +31,7 @@ export default function LoadingScreen() {
         <div className="loadingLogo">
           <img src="/logo.png" alt="" className="loadingLogoImg" />
         </div>
-        <h1>Swastik Boats</h1>
+        <div className="loadingTitle" aria-hidden="true">Swastik Boats</div>
         <p>Precision Boats Built for Performance</p>
         <div className="loadingBar">
           <div className="loadingFill"></div>

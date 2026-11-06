@@ -51,7 +51,7 @@
   }
 }
 
-.loadingContent h1 {
+.loadingContent .loadingTitle {
   font-size: 48px;
   font-weight: 400;
   letter-spacing: 1px;

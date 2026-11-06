@@ -1,14 +1,25 @@
 import Link from "next/link";
 import Header from "../../components/Header";
+import { createBreadcrumbData, createPageMetadata, serializeJsonLd } from "../seo";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Site Notice | Swastik Boats",
-  description: "Site Notice / Impressum - Swastik Fibchem Industry",
-};
+  description: "Company, contact, and legal information for Swastik Fibchem Industry.",
+  path: "/site-notice",
+});
+
+const breadcrumbData = createBreadcrumbData([
+  { name: "Home", path: "/" },
+  { name: "Site Notice", path: "/site-notice" },
+]);
 
 export default function SiteNotice() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbData) }}
+      />
       <Header dark />
       <div className="pageHero" style={{ paddingTop: '160px', paddingBottom: '60px' }}>
         <p className="hero-label">Governance</p>
