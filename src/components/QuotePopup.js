@@ -49,15 +49,15 @@ export default function QuotePopup({ productTitle, onClose }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+      const result = await response.json().catch(() => null);
 
-      if (response.ok) {
+      if (response.ok && result?.success) {
         setShowConfirmation(true);
       } else {
-        alert("Error submitting form. Please try again.");
+        alert(result?.error?.message || "We could not submit your request. Please try again.");
       }
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Error submitting form. Please try again.");
+    } catch {
+      alert("We could not submit your request. Please try again.");
     } finally {
       setLoading(false);
     }

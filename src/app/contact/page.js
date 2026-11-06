@@ -57,8 +57,9 @@ export default function ContactPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+      const result = await response.json().catch(() => null);
 
-      if (response.ok) {
+      if (response.ok && result?.success) {
         setSubmitted(true);
         setFormData({
           name: "",
@@ -70,11 +71,10 @@ export default function ContactPage() {
         });
         setTimeout(() => setSubmitted(false), 3000);
       } else {
-        alert("Error submitting form. Please try again.");
+        alert(result?.error?.message || "We could not submit your request. Please try again.");
       }
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Error submitting form. Please try again.");
+    } catch {
+      alert("We could not submit your request. Please try again.");
     } finally {
       setLoading(false);
     }
