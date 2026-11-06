@@ -20,12 +20,61 @@ export default function Header({ variant = "transparent" }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const scrollY = window.scrollY;
+    const body = document.body;
+    const html = document.documentElement;
+    const previousBodyStyles = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+    };
+    const previousHtmlOverflow = html.style.overflow;
+
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+    html.style.overflow = "hidden";
+
+    return () => {
+      body.style.overflow = previousBodyStyles.overflow;
+      body.style.position = previousBodyStyles.position;
+      body.style.top = previousBodyStyles.top;
+      body.style.width = previousBodyStyles.width;
+      html.style.overflow = previousHtmlOverflow;
+      window.scrollTo(0, scrollY);
+    };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
+    };
+    const desktopMedia = window.matchMedia("(min-width: 769px)");
+    const closeOnDesktop = (event) => {
+      if (event.matches) setMobileMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    desktopMedia.addEventListener("change", closeOnDesktop);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      desktopMedia.removeEventListener("change", closeOnDesktop);
+    };
+  }, [mobileMenuOpen]);
+
   const isDark = variant === "dark";
-  const headerClass = isDark
+  const headerClass = `${isDark
     ? "header headerDark"
     : isScrolled
       ? "header headerScrolled"
-      : "header";
+      : "header"}${mobileMenuOpen ? " headerMenuOpen" : ""}`;
 
   return (
     <>
