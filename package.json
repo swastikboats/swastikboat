@@ -19,5 +19,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
     "tailwindcss": "^4"
+  },
+  "overrides": {
+    "source-map-js": "1.2.2"
   }
 }
