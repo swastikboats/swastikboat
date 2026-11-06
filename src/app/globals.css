@@ -51,7 +51,7 @@
   }
 }
 
-.loadingContent h1 {
+.loadingContent .loadingTitle {
   font-size: 48px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -333,6 +333,8 @@ a {
   background: rgba(0, 0, 0, 0.9);
   z-index: 9998;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileMenu {
@@ -2613,6 +2615,12 @@ a {
   height: var(--header-height);
   background: var(--color-ocean);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .header.headerMenuOpen {
+    background: rgba(0, 0, 0, 0.9) !important;
+  }
 }
 
 /* ── Card Link Reset ────────────────────────── */

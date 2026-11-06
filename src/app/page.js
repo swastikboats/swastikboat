@@ -5,6 +5,42 @@ import ProductCard from "../components/ProductCard";
 import ProductImageCarousel from "../components/ProductImageCarousel";
 import HomepageGalleryCarousel from "../components/HomepageGalleryCarousel";
 import products from "../data/products";
+import { createPageMetadata, SITE_URL, serializeJsonLd } from "./seo";
+
+export const metadata = createPageMetadata({
+  title: "Swastik Boats | Racing Rowing Shells Made in India",
+  description:
+    "Racing rowing shells, training boats, and spare parts for rowing clubs, academies, and competitive programs in India.",
+  path: "/",
+  image: "/boats/Homepage 1 .jpg",
+});
+
+const homeStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Swastik Fibchem Industry",
+      alternateName: "Swastik Boats",
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        addressCountry: "IN",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Swastik Boats",
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
+};
 
 export default function Home() {
   const featured = products.slice(0, 3);
@@ -19,6 +55,10 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeStructuredData) }}
+      />
       <Header />
       <Hero />
 
@@ -83,6 +123,8 @@ export default function Home() {
         © 2026 Swastik Boats. All rights reserved.
         <span style={{ margin: "0 10px" }}>|</span>
         <Link href="/site-notice">Site Notice</Link>
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/privacy-policy">Privacy Policy</Link>
       </footer>
     </>
   );

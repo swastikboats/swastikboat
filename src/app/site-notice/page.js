@@ -1,14 +1,25 @@
 import Link from "next/link";
 import Header from "../../components/Header";
+import { createBreadcrumbData, createPageMetadata, serializeJsonLd } from "../seo";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Site Notice | Swastik Boats",
-  description: "Site Notice / Impressum - Swastik Fibchem Industry",
-};
+  description: "Company, contact, and legal information for Swastik Fibchem Industry.",
+  path: "/site-notice",
+});
+
+const breadcrumbData = createBreadcrumbData([
+  { name: "Home", path: "/" },
+  { name: "Site Notice", path: "/site-notice" },
+]);
 
 export default function SiteNotice() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbData) }}
+      />
       <Header dark />
       <div className="pageHero" style={{ paddingTop: '160px', paddingBottom: '60px' }}>
         <p className="hero-label">Governance</p>
@@ -53,7 +64,8 @@ export default function SiteNotice() {
 
         <section style={{ marginBottom: '40px' }}>
           <h2 style={{ fontSize: '24px', marginBottom: '16px', color: 'var(--color-primary)' }}>6. Privacy Notice</h2>
-          <p>We are committed to protecting your privacy online. When you use our contact form or request a quote, we collect basic personal data necessary to respond to your inquiry (such as name, email address, and phone number). We do not share, sell, or lease your personal information to third parties unless we have your permission or are required by law to do so. We employ reasonable security measures to protect your submitted information.</p>
+          <p>When you use our contact or quote forms, we collect the details you provide to assess and respond to your enquiry. Enquiries are sent through Gmail to the business mailbox, which only the business owner can access. We do not keep an enquiry database, but there is currently no fixed automatic deletion schedule for enquiry emails. Vercel may process technical information to host the website. Enquiry details are not routinely used for promotional marketing.</p>
+          <p><Link href="/privacy-policy">Read the Privacy Policy for more information</Link></p>
         </section>
 
         <section style={{ marginBottom: '40px' }}>
@@ -67,6 +79,8 @@ export default function SiteNotice() {
         © 2026 Swastik Boats. All rights reserved.
         <span style={{ margin: "0 10px" }}>|</span>
         <Link href="/site-notice">Site Notice</Link>
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/privacy-policy">Privacy Policy</Link>
       </footer>
     </>
   );

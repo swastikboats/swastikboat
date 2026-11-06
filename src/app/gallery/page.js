@@ -264,6 +264,8 @@ export default function GalleryPage() {
         © 2026 Swastik Boats. All rights reserved.
         <span style={{ margin: "0 10px" }}>|</span>
         <Link href="/site-notice">Site Notice</Link>
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/privacy-policy">Privacy Policy</Link>
       </footer>
     </>
   );

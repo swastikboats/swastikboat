@@ -5,6 +5,7 @@ import ProductCard from "../../../components/ProductCard";
 import ProductImageCarousel from "../../../components/ProductImageCarousel";
 import RequestQuoteButton from "../../../components/RequestQuoteButton";
 import products, { formatBoatClass } from "../../../data/products";
+import { createBreadcrumbData, createPageMetadata, SITE_URL, serializeJsonLd } from "../../seo";
 
 const boatProducts = products.filter((p) => !p.isSparePart);
 
@@ -16,10 +17,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const product = boatProducts.find((p) => p.slug === slug);
   if (!product) return {};
-  return {
-    title: `${product.title} — Swastik Boats`,
+  const image = product.images?.[0] || product.image;
+  return createPageMetadata({
+    title: `${product.title} | Swastik Boats`,
     description: product.subtitle,
-  };
+    path: `/products/${slug}`,
+    image: image && !product.noImage ? image : undefined,
+  });
 }
 
 export default async function ProductDetail({ params }) {
@@ -29,9 +33,35 @@ export default async function ProductDetail({ params }) {
   if (!product) notFound();
 
   const related = boatProducts.filter((p) => p.slug !== slug).slice(0, 3);
+  const productImages = product.noImage
+    ? []
+    : product.images || (product.image ? [product.image] : []);
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.description || product.subtitle,
+    url: `${SITE_URL}/products/${slug}`,
+    ...(productImages.length
+      ? { image: productImages.map((image) => new URL(image, SITE_URL).toString()) }
+      : {}),
+  };
+  const breadcrumbData = createBreadcrumbData([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: product.title, path: `/products/${slug}` },
+  ]);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(productStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbData) }}
+      />
       <Header variant="dark" />
 
       {/* ── Hero ──────────────────────────── */}
@@ -184,6 +214,8 @@ export default async function ProductDetail({ params }) {
         © 2026 Swastik Boats. All rights reserved.
         <span style={{ margin: "0 10px" }}>|</span>
         <Link href="/site-notice">Site Notice</Link>
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/privacy-policy">Privacy Policy</Link>
       </footer>
     </>
   );

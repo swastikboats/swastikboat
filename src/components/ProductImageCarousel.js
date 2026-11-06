@@ -57,7 +57,7 @@ export default function ProductImageCarousel({ images, title, interval = 5000 })
           <img
             key={i}
             src={src}
-            alt={`${title} - View ${i + i}`}
+            alt={`${title} - Image ${i + 1}`}
             className="productCarouselImage"
             style={{
               opacity: i === index ? 1 : 0,

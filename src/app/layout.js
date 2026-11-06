@@ -1,6 +1,7 @@
 import "./globals.css";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import LoadingScreen from "../components/LoadingScreen";
+import { SITE_URL } from "./seo";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -15,8 +16,10 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata = {
-  title: "Swastik Boats",
-  description: "Precision Boats Built for Performance",
+  metadataBase: new URL(SITE_URL),
+  title: "Swastik Boats | Racing Rowing Shells Made in India",
+  description:
+    "Racing rowing shells, training boats, and spare parts from Swastik Boats in Pune, India.",
 };
 
 export const viewport = {
