@@ -236,7 +236,11 @@ export default function ContactPage() {
                 </button>
 
                 <p className="formNote">
-                  * Required fields. We typically respond within 24 hours.
+                  We use the details you provide to respond to your enquiry. Please read our{" "}
+                  <Link href="/privacy-policy">Privacy Policy</Link>.
+                </p>
+                <p className="formNote">
+                  * Required fields. We aim to respond within 24 hours. Response times may vary depending on availability.
                 </p>
               </form>
             )}
@@ -249,6 +253,8 @@ export default function ContactPage() {
         © 2026 Swastik Boats. All rights reserved.
         <span style={{ margin: "0 10px" }}>|</span>
         <Link href="/site-notice">Site Notice</Link>
+        <span style={{ margin: "0 10px" }}>|</span>
+        <Link href="/privacy-policy">Privacy Policy</Link>
       </footer>
     </>
   );

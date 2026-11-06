@@ -286,7 +286,7 @@ export function createQuotePostHandler({
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #0B1D26; color: white; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;"><h1 style="margin: 0;">Swastik Boats</h1></div>
           <h2 style="color: #0B1D26;">Thank You, ${escapedName}!</h2>
-          <p style="color: #64748B; line-height: 1.6;">We've received your quote request for the <strong>${escapedBoatInterest}</strong>. Our team will review your request and get back to you within 24 hours.</p>
+          <p style="color: #64748B; line-height: 1.6;">We've received your quote request for the <strong>${escapedBoatInterest}</strong>. Our team will review your request. We aim to respond within 24 hours, although response times may vary depending on availability.</p>
           <div style="background: #F3F6F8; padding: 15px; border-radius: 8px; margin: 20px 0;"><p style="margin: 0; color: #0F172A;"><strong>Your Request Details:</strong></p><p style="margin: 5px 0; color: #64748B;">Boat: ${escapedBoatInterest}</p><p style="margin: 5px 0; color: #64748B;">Contact: ${escapedEmail}</p></div>
           <p style="color: #64748B; font-size: 14px; line-height: 1.6;">If you have any urgent questions, feel free to reach out to us at <a href="mailto:swastikboats@gmail.com" style="color: #0ea5e9;">swastikboats@gmail.com</a></p>
           <p style="color: #64748B; margin-top: 30px; font-size: 12px; border-top: 1px solid #E2E8F0; padding-top: 15px;">Best regards,<br/><strong>Swastik Boats Team</strong></p>

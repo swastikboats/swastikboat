@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function QuotePopup({ productTitle, onClose }) {
   const [formData, setFormData] = useState({
@@ -122,7 +123,11 @@ export default function QuotePopup({ productTitle, onClose }) {
             {loading ? "Sending..." : "Send Quote Request"}
           </button>
 
-          <p className="formNote">* Required fields. We typically respond within 24 hours.</p>
+          <p className="formNote">
+            We use the details you provide to respond to your enquiry. Please read our{" "}
+            <Link href="/privacy-policy">Privacy Policy</Link>.
+          </p>
+          <p className="formNote">* Required fields. We aim to respond within 24 hours. Response times may vary depending on availability.</p>
         </form>
       </div>
     </div>
